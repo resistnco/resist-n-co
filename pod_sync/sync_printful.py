@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Sync all 24 products to Printful and Gelato using GitHub raw URLs."""
+"""Sync all 24 products to Printful using GitHub raw URLs for designs."""
 import json, os, requests, sqlite3, time
 
 GITHUB_RAW = "https://raw.githubusercontent.com/resistnco/resist-n-co/master/pod_sync/designs"
 PRINTFUL_KEY = os.environ.get("PRINTFUL_API_KEY", "")
-GELATO_KEY = os.environ.get("GELATO_API_KEY", "")
 DB_PATH = "dev.db"
-
-PRINTFUL_HEADERS = {"Authorization": f"Bearer {PRINTFUL_KEY}", "Content-Type": "application/json"}
+HEADERS = {"Authorization": f"Bearer {PRINTFUL_KEY}", "Content-Type": "application/json"}
 
 DESIGN_MAP = {
     "tshirt-resist": "tshirt-resist.png", "tshirt-antifascist": "tshirt-antifascist.png",
@@ -24,7 +22,6 @@ DESIGN_MAP = {
     "coaster-organize-mobilize": "coaster-organize-mobilize.png", "tote-no-planet-b": "tote-no-planet-b.png",
 }
 
-# Determine product type from slug (not category, since many are "accessory")
 def get_product_type(slug):
     if slug.startswith("tshirt"): return "tshirt"
     if slug.startswith("hoodie"): return "hoodie"
@@ -34,18 +31,31 @@ def get_product_type(slug):
     if slug.startswith("tote") or slug.startswith("sac"): return "tote"
     return None
 
-# Printful catalog product IDs
+# Printful catalog product IDs (verified working)
 PRINTFUL_CATALOG = {
-    "tshirt": 71, "hoodie": 145, "tuque": 261, "mug": 25, "coaster": 607, "tote": 240,
+    "tshirt": 71,    # Bella+Canvas 3001
+    "hoodie": 145,   # Gildan 18500
+    "tuque": 458,    # All-Over Print Beanie
+    "mug": 19,       # 11oz Mug
+    "tote": 274,     # All-Over Print Large Tote
+    "coaster": None, # Not available on Printful
 }
 
-COLOR_MAP = {
+# Color mappings: our DB color -> Printful catalog color
+COLOR_MAP_TSHIRT = {
     "Black": "Black", "White": "White", "Navy": "Navy",
-    "Dark Grey Heather": "Athletic Heather", "Heather Forest": "Forest",
-    "Maroon": "Cardinal", "Athletic Heather": "Sport Grey",
-    "Dark Heather": "Sport Grey", "Forest": "Forest", "Sport Grey": "Sport Grey",
-    "Natural": "Natural", "Charcoal": "Charcoal", "Red": "Red",
-    "Gold": "Gold", "Royal": "Royal", "Orange": "Orange", "Sand": "Sand",
+    "Athletic Heather": "Athletic Heather", "Dark Grey Heather": "Dark Grey Heather",
+    "Heather Forest": "Heather Forest", "Maroon": "Maroon",
+    "Red": "Red", "Forest": "Forest", "Sport Grey": "Sport Grey",
+    "Natural": "Natural", "Dark Heather": "Dark Heather",
+}
+
+COLOR_MAP_HOODIE = {
+    "Black": "Black", "White": "White", "Navy": "Navy",
+    "Dark Heather": "Dark Heather", "Forest": "Forest Green",
+    "Maroon": "Maroon", "Red": "Red", "Sport Grey": "Sport Grey",
+    "Sand": "Sand", "Charcoal": "Charcoal", "Gold": "Gold",
+    "Royal": "Royal", "Orange": "Orange",
 }
 
 def get_products():
@@ -58,35 +68,35 @@ def get_variants(pid):
     rows = conn.execute("SELECT id, color, size, colorHex, price FROM product_variants WHERE productId = ? ORDER BY id", (pid,)).fetchall()
     conn.close(); return [dict(r) for r in rows]
 
-def printful_get_catalog_variants(catalog_id):
-    resp = requests.get(f"https://api.printful.com/products/{catalog_id}", headers=PRINTFUL_HEADERS)
+def get_catalog_variants(catalog_id):
+    resp = requests.get(f"https://api.printful.com/products/{catalog_id}", headers=HEADERS)
     if resp.status_code == 200:
         return resp.json().get("result", {}).get("variants", [])
-    print(f"  Catalog error: {resp.status_code} {resp.text[:100]}")
     return []
 
-def printful_create_product(product, design_url):
+def create_product(product, design_url):
     ptype = get_product_type(product["slug"])
-    if not ptype:
-        print(f"  Unknown product type for: {product['slug']}")
-        return None
     catalog_id = PRINTFUL_CATALOG.get(ptype)
     if not catalog_id:
-        print(f"  No Printful catalog for type: {ptype}")
+        print(f"  SKIP: No Printful catalog for {ptype}")
         return None
     
-    catalog_variants = printful_get_catalog_variants(catalog_id)
+    catalog_variants = get_catalog_variants(catalog_id)
     if not catalog_variants:
+        print(f"  ERROR: No catalog variants for ID {catalog_id}")
         return None
     
     db_variants = get_variants(product["id"])
+    color_map = COLOR_MAP_TSHIRT if ptype == "tshirt" else COLOR_MAP_HOODIE if ptype == "hoodie" else {}
+    
     sync_variants = []
     used = set()
     
     for db_v in db_variants:
-        db_color = COLOR_MAP.get(db_v["color"], db_v["color"])
+        db_color = color_map.get(db_v["color"], db_v["color"])
         db_size = db_v["size"]
         
+        # Find matching variant
         match = None
         for cv in catalog_variants:
             if cv.get("color") == db_color and cv.get("size") == db_size and cv["id"] not in used:
@@ -99,7 +109,7 @@ def printful_create_product(product, design_url):
                     match = cv; used.add(cv["id"]); break
         
         if match:
-            placement = "front" if ptype in ("tshirt", "hoodie", "tuque") else "default"
+            placement = "front" if ptype in ("tshirt", "hoodie") else "default"
             sync_variants.append({
                 "variant_id": match["id"],
                 "product_id": catalog_id,
@@ -108,7 +118,7 @@ def printful_create_product(product, design_url):
             })
     
     if not sync_variants:
-        print(f"  No matching variants")
+        print(f"  ERROR: No matching variants (tried {len(db_variants)} DB variants)")
         return None
     
     body = {
@@ -116,86 +126,61 @@ def printful_create_product(product, design_url):
         "sync_variants": sync_variants,
     }
     
-    resp = requests.post("https://api.printful.com/store/products", headers=PRINTFUL_HEADERS, json=body)
-    if resp.status_code == 200:
-        result = resp.json().get("result", {})
-        pid = result.get("sync_product", {}).get("id")
-        nv = len(result.get("sync_variants", []))
-        print(f"  OK: Printful product {pid} ({nv} variants)")
-        return {"product_id": pid, "variants": result.get("sync_variants", [])}
-    else:
-        print(f"  Error: {resp.text[:200]}")
-        return None
+    # Retry on rate limit
+    for attempt in range(3):
+        resp = requests.post("https://api.printful.com/store/products", headers=HEADERS, json=body)
+        if resp.status_code == 200:
+            result = resp.json().get("result", {})
+            pid = result.get("id")
+            nv = result.get("variants", 0)
+            print(f"  OK: Printful product {pid} ({nv} variants)")
+            return {"product_id": pid, "variants_count": nv}
+        elif resp.status_code == 429:
+            wait = 60
+            print(f"  Rate limited, waiting {wait}s...")
+            time.sleep(wait)
+        else:
+            print(f"  ERROR: {resp.status_code} {resp.text[:200]}")
+            return None
+    return None
 
-def sync_printful():
-    print("\n" + "=" * 60)
-    print("PRINTFUL SYNC")
+def main():
     print("=" * 60)
+    print("PRINTFUL SYNC — 24 produits")
+    print("=" * 60)
+    
     products = get_products()
     results = {}
+    skipped = []
     
     for p in products:
         print(f"\n[{p['id']}/24] {p['name']}")
         filename = DESIGN_MAP.get(p["slug"])
         if not filename:
-            print(f"  No design file for: {p['slug']}")
+            print(f"  SKIP: No design file")
+            skipped.append(p["id"])
+            continue
+        
+        ptype = get_product_type(p["slug"])
+        if ptype == "coaster":
+            print(f"  SKIP: Coasters not available on Printful")
+            skipped.append(p["id"])
             continue
         
         design_url = f"{GITHUB_RAW}/{filename}"
-        result = printful_create_product(p, design_url)
+        result = create_product(p, design_url)
         if result:
             results[p["id"]] = result
-        time.sleep(3)  # Rate limit
+        time.sleep(4)  # Rate limit
     
-    print(f"\nPrintful: {len(results)}/24 products created")
-    return results
-
-def sync_gelato():
-    print("\n" + "=" * 60)
-    print("GELATO SYNC")
-    print("=" * 60)
+    print(f"\n{'=' * 60}")
+    print(f"RÉSULTAT PRINTFUL")
+    print(f"{'=' * 60}")
+    print(f"Créés: {len(results)}/24")
+    print(f"Ignorés: {len(skipped)} (coasters/non disponibles)")
     
-    # Test Gelato API - try different auth methods
-    # Method 1: X-API-KEY header with full key
-    resp = requests.get("https://api.gelato.com/v2/products", 
-                       headers={"X-API-KEY": GELATO_KEY},
-                       params={"limit": 1})
-    print(f"Gelato API (header): {resp.status_code}")
-    
-    if resp.status_code != 200:
-        # Method 2: query param
-        resp = requests.get("https://api.gelato.com/v2/products",
-                           params={"limit": 1, "apiKey": GELATO_KEY})
-        print(f"Gelato API (query): {resp.status_code}")
-    
-    if resp.status_code != 200:
-        # Method 3: Bearer auth
-        resp = requests.get("https://api.gelato.com/v2/products",
-                           headers={"Authorization": f"Bearer {GELATO_KEY}"},
-                           params={"limit": 1})
-        print(f"Gelato API (bearer): {resp.status_code}")
-    
-    if resp.status_code != 200:
-        print(f"Gelato API failed: {resp.text[:200]}")
-        print("Gelato sync skipped — API authentication issue")
-        return {}
-    
-    print(f"Gelato API connected!")
-    # TODO: Create products on Gelato
-    return {}
+    with open("pod_sync/printful_mappings.json", "w") as f:
+        json.dump(results, f, indent=2)
 
 if __name__ == "__main__":
-    printful_results = sync_printful()
-    with open("pod_sync/printful_mappings.json", "w") as f:
-        json.dump(printful_results, f, indent=2)
-    
-    gelato_results = sync_gelato()
-    with open("pod_sync/gelato_mappings.json", "w") as f:
-        json.dump(gelato_results, f, indent=2)
-    
-    print("\n" + "=" * 60)
-    print("SYNC SUMMARY")
-    print("=" * 60)
-    print(f"Printify:  24/24 (already synced)")
-    print(f"Printful:  {len(printful_results)}/24")
-    print(f"Gelato:    {len(gelato_results)}/24")
+    main()
