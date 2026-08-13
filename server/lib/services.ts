@@ -76,7 +76,18 @@ export async function calculateShipping(subtotal: number): Promise<ShippingResul
 
 export async function getSetting(key: string): Promise<string> {
   const setting = await prisma.setting.findUnique({ where: { key } });
-  return setting?.value || '';
+  if (setting?.value) return setting.value;
+  // Fallback to environment variables for key settings
+  const envFallbacks: Record<string, string> = {
+    'interac_email': process.env.INTERAC_EMAIL || '',
+    'interac_instructions': process.env.INTERAC_INSTRUCTIONS || 'Envoyez un virement Interac au montant exact avec le numéro de commande en référence.',
+    'site_name': 'Resist N Co',
+    'site_email': process.env.EMAIL_FROM || '',
+    'currency': 'CAD',
+    'shipping_flat_rate': '9.99',
+    'shipping_free_threshold': '75',
+  };
+  return envFallbacks[key] || '';
 }
 
 export async function getAllSettings(): Promise<Record<string, string>> {
