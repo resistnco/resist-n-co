@@ -9,6 +9,9 @@ import { createServer } from "node:http";
 const app = express();
 const httpServer = createServer(app);
 
+// Trust Render's reverse proxy so secure cookies work over HTTPS
+app.set('trust proxy', 1);
+
 declare module "http" {
   interface IncomingMessage {
     rawBody: unknown;
