@@ -9,7 +9,14 @@ import nodemailer from 'nodemailer';
 const resendApiKey = process.env.EMAIL_API_KEY || '';
 const gmailUser = process.env.GMAIL_USER || '';
 const gmailAppPassword = process.env.GMAIL_APP_PASSWORD || '';
-const emailFrom = process.env.EMAIL_FROM || 'Resist N Co <onboarding@resend.dev>';
+
+// Sanitize EMAIL_FROM — Render dashboard may have HTML-encoded the < > characters
+const rawEmailFrom = process.env.EMAIL_FROM || '';
+const emailFrom = rawEmailFrom
+  .replace(/&lt;/g, '<')
+  .replace(/&gt;/g, '>')
+  .replace(/&amp;/g, '&')
+  || `Resist N Co <${gmailUser || 'onboarding@resend.dev'}>`;
 
 export function isEmailConfigured(): boolean {
   return !!resendApiKey || (!!gmailUser && !!gmailAppPassword);

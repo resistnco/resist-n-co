@@ -593,6 +593,36 @@ export function registerRoutes(app: Express) {
     }
   });
 
+  // ============================================================
+  // ADMIN — Email Test
+  // ============================================================
+
+  app.post('/api/admin/test-email', requireAdmin, async (req, res) => {
+    try {
+      const { sendOrderCreatedEmail } = await import('./lib/email');
+      const testOrder = {
+        id: 0,
+        orderNumber: 'TEST-' + Date.now(),
+        customerName: 'Test Client',
+        customerEmail: req.body.email || process.env.GMAIL_USER || 'resistnco@gmail.com',
+        paymentMethod: 'interac',
+        subtotal: 29.99,
+        shipping: 9.99,
+        taxes: 4.49,
+        total: 44.47,
+        shippingAddress: '123 Test St',
+        city: 'Montreal',
+        province: 'QC',
+        postalCode: 'H1A 1A1',
+        country: 'Canada',
+      };
+      await sendOrderCreatedEmail(testOrder);
+      res.json({ success: true, message: 'Email sent', to: testOrder.customerEmail });
+    } catch (err: any) {
+      res.json({ success: false, error: err.message });
+    }
+  });
+
   app.patch('/api/admin/settings', requireAdmin, async (req, res) => {
     try {
       const updates = req.body;
