@@ -6,9 +6,7 @@ import nodemailer from 'nodemailer';
 // Email Service — supports Resend API or Gmail SMTP
 // ============================================================
 
-// Skip Resend entirely — key was revoked, use Gmail SMTP only
-// To re-enable: generate a new key at https://resend.com/api-keys
-const resendApiKey = '';
+const resendApiKey = process.env.EMAIL_API_KEY || '';
 const gmailUser = process.env.GMAIL_USER || '';
 const gmailAppPassword = process.env.GMAIL_APP_PASSWORD || '';
 
