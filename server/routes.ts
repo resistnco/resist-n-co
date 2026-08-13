@@ -222,7 +222,7 @@ export function registerRoutes(app: Express) {
         where: { id: result.orderId! },
       });
       if (order) {
-        await sendOrderCreatedEmail(order);
+        sendOrderCreatedEmail(order).catch(e => console.error('[Email] Order created email failed:', e.message));
       }
 
       res.json({ url: result.sessionUrl, orderNumber: result.orderNumber });
@@ -297,8 +297,9 @@ export function registerRoutes(app: Express) {
         data: { orderId: order.id, provider: 'interac', amount: total, status: 'pending' },
       });
 
-      await sendOrderCreatedEmail(order);
-      await sendInteracInstructionsEmail(order);
+      // Send emails asynchronously (non-blocking) so checkout responds immediately
+      sendOrderCreatedEmail(order).catch(e => console.error('[Email] Order created email failed:', e.message));
+      sendInteracInstructionsEmail(order).catch(e => console.error('[Email] Interac instructions email failed:', e.message));
 
       res.json({ orderNumber, total, interacEmail: await getSetting('interac_email') });
     } catch (err: any) {
