@@ -3,8 +3,16 @@ set -e
 
 echo "=== Resist N Co — Start ==="
 
-# Ensure the data directory exists (persistent disk mount point)
-mkdir -p /var/data
+# Use local data directory (Free plan has no persistent disk)
+# Fall back to /var/data if it exists (paid plan with disk), otherwise use ./data
+if [ -w /var/data ] 2>/dev/null; then
+  DATA_DIR=/var/data
+else
+  DATA_DIR=./data
+  mkdir -p $DATA_DIR
+fi
+export DATABASE_URL="file:$DATA_DIR/dev.db"
+echo "Using DATABASE_URL=$DATABASE_URL"
 
 # Initialize the database schema (creates tables if not exist)
 npx prisma db push --skip-generate --accept-data-loss 2>/dev/null || npx prisma db push --skip-generate 2>/dev/null || true
