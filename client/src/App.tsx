@@ -43,27 +43,27 @@ function AppRouter() {
     return (
       <Switch>
         <Route path="/admin/login" component={AdminLoginPage} />
-        <Route path="/admin/dashboard" nest>
+        <Route path="/admin/dashboard">
           <AdminLayout>
             <AdminDashboardPage />
           </AdminLayout>
         </Route>
-        <Route path="/admin/commandes" nest>
+        <Route path="/admin/commandes">
           <AdminLayout>
             <AdminOrdersPage />
           </AdminLayout>
         </Route>
-        <Route path="/admin/produits" nest>
+        <Route path="/admin/produits">
           <AdminLayout>
             <AdminProductsPage />
           </AdminLayout>
         </Route>
-        <Route path="/admin/fournisseurs" nest>
+        <Route path="/admin/fournisseurs">
           <AdminLayout>
             <AdminSuppliersPage />
           </AdminLayout>
         </Route>
-        <Route path="/admin/parametres" nest>
+        <Route path="/admin/parametres">
           <AdminLayout>
             <AdminSettingsPage />
           </AdminLayout>
