@@ -610,7 +610,7 @@ export function registerRoutes(app: Express) {
 
   app.get('/api/admin/pod/status', requireAdmin, async (req, res) => {
     try {
-      const providers = ['Printful', 'Printify', 'Gooten'];
+      const providers = ['Printful', 'Printify', 'Gelato'];
       const status = providers.map(name => {
         const provider = getPODProvider(name);
         return { name, configured: provider?.isConfigured || false };
