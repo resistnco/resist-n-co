@@ -26,8 +26,9 @@ async function sendEmail(to: string, subject: string, html: string): Promise<boo
     console.log(`[Email] Not configured. Would send to ${to}: ${subject}`);
     return false;
   }
-  try {
-    if (resendApiKey) {
+  // Try Resend first if configured
+  if (resendApiKey) {
+    try {
       const { Resend } = await import('resend');
       const resend = new Resend(resendApiKey);
       await resend.emails.send({
@@ -39,7 +40,14 @@ async function sendEmail(to: string, subject: string, html: string): Promise<boo
       });
       console.log(`[Email] Sent via Resend to ${to}: ${subject}`);
       return true;
-    } else {
+    } catch (err: any) {
+      console.error(`[Email] Resend failed, trying Gmail fallback: ${err.message}`);
+    }
+  }
+
+  // Gmail SMTP fallback
+  if (gmailUser && gmailAppPassword) {
+    try {
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: { user: gmailUser, pass: gmailAppPassword },
@@ -53,11 +61,14 @@ async function sendEmail(to: string, subject: string, html: string): Promise<boo
       });
       console.log(`[Email] Sent via Gmail to ${to}: ${subject}`);
       return true;
+    } catch (err: any) {
+      console.error(`[Email] Gmail failed to send to ${to}: ${err.message}`);
+      return false;
     }
-  } catch (err: any) {
-    console.error(`[Email] Failed to send to ${to}: ${err.message}`);
-    return false;
   }
+
+  console.error('[Email] No email method available');
+  return false;
 }
 
 // Fetch order items for inclusion in emails
