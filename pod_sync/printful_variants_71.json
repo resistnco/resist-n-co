@@ -1,0 +1,1882 @@
+[
+  {
+    "id": 4020,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Black / 2XL)",
+    "size": "2XL",
+    "color": "Black",
+    "color_code": "#0c0c0c",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4016_1752236278.jpg",
+    "price": "13.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 5295,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Black / 3XL)",
+    "size": "3XL",
+    "color": "Black",
+    "color_code": "#0c0c0c",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4016_1752236278.jpg",
+    "price": "15.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4018,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Black / L)",
+    "size": "L",
+    "color": "Black",
+    "color_code": "#0c0c0c",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4016_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4017,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Black / M)",
+    "size": "M",
+    "color": "Black",
+    "color_code": "#0c0c0c",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4016_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4016,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Black / S)",
+    "size": "S",
+    "color": "Black",
+    "color_code": "#0c0c0c",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4016_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4019,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Black / XL)",
+    "size": "XL",
+    "color": "Black",
+    "color_code": "#0c0c0c",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4016_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 9527,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Black / XS)",
+    "size": "XS",
+    "color": "Black",
+    "color_code": "#0c0c0c",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4016_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 8464,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Dark Grey Heather / 2XL)",
+    "size": "2XL",
+    "color": "Dark Grey Heather",
+    "color_code": "#3E3C3D",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8460_1752236278.jpg",
+    "price": "13.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8465,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Dark Grey Heather / 3XL)",
+    "size": "3XL",
+    "color": "Dark Grey Heather",
+    "color_code": "#3E3C3D",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8460_1752236278.jpg",
+    "price": "15.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "CA": "Canada",
+      "AU": "Australia"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed and ring-spun",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8462,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Dark Grey Heather / L)",
+    "size": "L",
+    "color": "Dark Grey Heather",
+    "color_code": "#3E3C3D",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8460_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8461,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Dark Grey Heather / M)",
+    "size": "M",
+    "color": "Dark Grey Heather",
+    "color_code": "#3E3C3D",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8460_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8460,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Dark Grey Heather / S)",
+    "size": "S",
+    "color": "Dark Grey Heather",
+    "color_code": "#3E3C3D",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8460_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8463,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Dark Grey Heather / XL)",
+    "size": "XL",
+    "color": "Dark Grey Heather",
+    "color_code": "#3E3C3D",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8460_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 9564,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Dark Grey Heather / XS)",
+    "size": "XS",
+    "color": "Dark Grey Heather",
+    "color_code": "#3E3C3D",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8460_1752236278.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8492,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Heather Forest / 2XL)",
+    "size": "2XL",
+    "color": "Heather Forest",
+    "color_code": "#425040",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8488_1752236282.jpg",
+    "price": "13.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "CA": "Canada",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8493,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Heather Forest / 3XL)",
+    "size": "3XL",
+    "color": "Heather Forest",
+    "color_code": "#425040",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8488_1752236282.jpg",
+    "price": "15.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "CA": "Canada"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8490,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Heather Forest / L)",
+    "size": "L",
+    "color": "Heather Forest",
+    "color_code": "#425040",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8488_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8489,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Heather Forest / M)",
+    "size": "M",
+    "color": "Heather Forest",
+    "color_code": "#425040",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8488_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8488,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Heather Forest / S)",
+    "size": "S",
+    "color": "Heather Forest",
+    "color_code": "#425040",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8488_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 8491,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Heather Forest / XL)",
+    "size": "XL",
+    "color": "Heather Forest",
+    "color_code": "#425040",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/8488_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 52.0
+      },
+      {
+        "name": "polyester",
+        "percentage": 48.0
+      }
+    ]
+  },
+  {
+    "id": 4110,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Maroon / 2XL)",
+    "size": "2XL",
+    "color": "Maroon",
+    "color_code": "#721d37",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4106_1752236282.jpg",
+    "price": "13.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 15792,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Maroon / 3XL)",
+    "size": "3XL",
+    "color": "Maroon",
+    "color_code": "#721d37",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4106_1752236282.jpg",
+    "price": "15.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4108,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Maroon / L)",
+    "size": "L",
+    "color": "Maroon",
+    "color_code": "#721d37",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4106_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4107,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Maroon / M)",
+    "size": "M",
+    "color": "Maroon",
+    "color_code": "#721d37",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4106_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4106,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Maroon / S)",
+    "size": "S",
+    "color": "Maroon",
+    "color_code": "#721d37",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4106_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4109,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Maroon / XL)",
+    "size": "XL",
+    "color": "Maroon",
+    "color_code": "#721d37",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4106_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "UK": "United Kingdom"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 9545,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Maroon / XS)",
+    "size": "XS",
+    "color": "Maroon",
+    "color_code": "#721d37",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4106_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4115,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Navy / 2XL)",
+    "size": "2XL",
+    "color": "Navy",
+    "color_code": "#212642",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4111_1752236282.jpg",
+    "price": "13.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 12874,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Navy / 3XL)",
+    "size": "3XL",
+    "color": "Navy",
+    "color_code": "#212642",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4111_1752236282.jpg",
+    "price": "15.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "CA": "Canada",
+      "AU": "Australia"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4113,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Navy / L)",
+    "size": "L",
+    "color": "Navy",
+    "color_code": "#212642",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4111_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4112,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Navy / M)",
+    "size": "M",
+    "color": "Navy",
+    "color_code": "#212642",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4111_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4111,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Navy / S)",
+    "size": "S",
+    "color": "Navy",
+    "color_code": "#212642",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4111_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 4114,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Navy / XL)",
+    "size": "XL",
+    "color": "Navy",
+    "color_code": "#212642",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4111_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "CA": "Canada",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "CA",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  },
+  {
+    "id": 9546,
+    "product_id": 71,
+    "name": "Bella + Canvas 3001 Unisex Short Sleeve Jersey T-Shirt with Tear Away Label (Navy / XS)",
+    "size": "XS",
+    "color": "Navy",
+    "color_code": "#212642",
+    "color_code2": null,
+    "image": "https://files.cdn.printful.com/products/71/4111_1752236282.jpg",
+    "price": "11.69",
+    "in_stock": true,
+    "availability_regions": {
+      "US": "United States",
+      "EU": "Europe",
+      "EU_LV": "Latvia",
+      "EU_ES": "Spain",
+      "UK": "United Kingdom",
+      "AU": "Australia",
+      "JP": "Japan",
+      "BR": "Brazil"
+    },
+    "availability_status": [
+      {
+        "region": "US",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_LV",
+        "status": "in_stock"
+      },
+      {
+        "region": "EU_ES",
+        "status": "in_stock"
+      },
+      {
+        "region": "UK",
+        "status": "in_stock"
+      },
+      {
+        "region": "AU",
+        "status": "in_stock"
+      },
+      {
+        "region": "JP",
+        "status": "in_stock"
+      },
+      {
+        "region": "BR",
+        "status": "in_stock"
+      }
+    ],
+    "material": [
+      {
+        "name": "combed ring spun cotton",
+        "percentage": 100.0
+      }
+    ]
+  }
+]

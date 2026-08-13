@@ -1,0 +1,578 @@
+import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcryptjs';
+import * as crypto from 'crypto';
+
+const prisma = new PrismaClient();
+
+const SEED_PRODUCTS = [
+  {
+    name: "T-Shirt « Resist »",
+    slug: "tshirt-resist",
+    description: "Poing levé tenant une pousse verte, texte RESIST. Impression DTG blanc et rouge. Un manifeste à porter.",
+    category: "tshirt",
+    basePrice: 29.99,
+    imageUrl: "/products/tshirt-resist.jpg",
+    supplier: "Printful",
+    supplierModel: "Bella+Canvas 3001",
+    supplierCost: 11.69,
+    supplierProductId: "71",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Grey Heather", hex: "#3a3a3a" },
+      { name: "Heather Forest", hex: "#1a3a2a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+    ],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "T-Shirt « Antifascist Action »",
+    slug: "tshirt-antifascist",
+    description: "Trois flèches antifascistes en cercle rouge, texte ANTIFASCIST ACTION. Toujours relevant, malheureusement.",
+    category: "tshirt",
+    basePrice: 29.99,
+    imageUrl: "/products/tshirt-antifa.jpg",
+    supplier: "Printify",
+    supplierModel: "Bella+Canvas 3001",
+    supplierCost: 11.29,
+    supplierProductId: "12",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "White", hex: "#f5f0e8" },
+      { name: "Red", hex: "#8a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Athletic Heather", hex: "#8a8a8a" },
+    ],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "T-Shirt « Solidarity »",
+    slug: "tshirt-solidarity",
+    description: "Poings levés de différentes tailles s'entrelaçant en cercle, texte SOLIDARITY. L'union fait la force.",
+    category: "tshirt",
+    basePrice: 29.99,
+    imageUrl: "/products/tshirt-solidarity.jpg",
+    supplier: "Gelato",
+    supplierModel: "Bella+Canvas 3001",
+    supplierCost: 10.69,
+    supplierProductId: "pla_bella_canvas_3001",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Dark Grey Heather", hex: "#3a3a3a" },
+      { name: "Heather Forest", hex: "#1a3a2a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Navy", hex: "#1a2b4a" },
+    ],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "Hoodie « Climate Justice »",
+    slug: "hoodie-climate-justice",
+    description: "Mains soutenant la Terre, texte CLIMATE JUSTICE NOW. Il n'y a pas de planète B. Doublure polaire, capuche ajustable.",
+    category: "hoodie",
+    basePrice: 54.99,
+    imageUrl: "/products/hoodie-climate.jpg",
+    supplier: "Printful",
+    supplierModel: "Gildan 18500",
+    supplierCost: 22.19,
+    supplierProductId: "156",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Heather", hex: "#3a3a3a" },
+      { name: "Heather Forest", hex: "#1a3a2a" },
+      { name: "Sport Grey", hex: "#9a9a9a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "Hoodie « No Pasarán »",
+    slug: "hoodie-no-pasaran",
+    description: "Texte NO PASARÁN en fil de fer barbelé, chaîne brisée. Ils ne passeront pas. Capuche ajustable, poches kangourou.",
+    category: "hoodie",
+    basePrice: 54.99,
+    imageUrl: "/products/hoodie-nopasaran.jpg",
+    supplier: "Printify",
+    supplierModel: "Gildan 18500",
+    supplierCost: 21.58,
+    supplierProductId: "172",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Dark Heather", hex: "#3a3a3a" },
+      { name: "Sport Grey", hex: "#9a9a9a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "Tuque « Power to the People »",
+    slug: "tuque-power-people",
+    description: "Tuque tricot 100% acrylique, doublure polaire. Texte POWER TO THE PEOPLE brodé sur le rebord rabattu. Chaleur et conviction.",
+    category: "accessory",
+    basePrice: 24.99,
+    imageUrl: "/products/tuque-power.jpg",
+    supplier: "Printful",
+    supplierModel: "Cuffed Knit Beanie",
+    supplierCost: 12.95,
+    supplierProductId: "284",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Grey", hex: "#3a3a3a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+    ],
+    sizes: ["Unique"],
+  },
+  {
+    name: "Tasse « Defend the Earth »",
+    slug: "mug-defend-earth",
+    description: "Mug céramique 11oz, émail premium. Bouclier vert avec arbre et racines, texte DEFEND THE EARTH. Compatible lave-vaisselle et micro-ondes.",
+    category: "accessory",
+    basePrice: 16.99,
+    imageUrl: "/products/mug-defend.jpg",
+    supplier: "Gelato",
+    supplierModel: "Ceramic Mug 11oz",
+    supplierCost: 4.93,
+    supplierProductId: "pla_mug_11oz",
+    colors: [
+      { name: "White", hex: "#f5f0e8" },
+      { name: "Black", hex: "#1a1a1a" },
+    ],
+    sizes: ["11oz"],
+  },
+  {
+    name: "Sous-verre « Organize »",
+    slug: "coaster-organize",
+    description: "Set de 4 sous-verres en liège naturel, diamètre 10cm. Poing levé en cercle, texte ORGANIZE. Résistant à l'eau, antidérapant. Organisez-vous.",
+    category: "accessory",
+    basePrice: 14.99,
+    imageUrl: "/products/coaster-organize.jpg",
+    supplier: "Printify",
+    supplierModel: "Cork-Backed Coaster",
+    supplierCost: 3.50,
+    supplierProductId: "coaster_cork",
+    colors: [
+      { name: "Natural Cork", hex: "#c4a882" },
+      { name: "Black", hex: "#1a1a1a" },
+    ],
+    sizes: ["Set de 4"],
+  },
+  // ==================== 5 NOUVEAUX T-SHIRTS ====================
+  {
+    name: "T-Shirt « Bye Don »",
+    slug: "tshirt-bye-don",
+    description: "Poing levé rouge tenant une couronne brisée, texte BYE DON. Un message sans ambiguïté: on n'en veut plus. Bella+Canvas 3001, coton peigné 100%, impression DTG.",
+    category: "tshirt",
+    basePrice: 29.99,
+    imageUrl: "/products/tshirt-bye-don.jpg",
+    supplier: "Printful",
+    supplierModel: "Bella+Canvas 3001",
+    supplierCost: 12.95,
+    supplierProductId: "71",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Grey Heather", hex: "#3a3a3a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Red", hex: "#8a1a1a" },
+    ],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "T-Shirt « Tiny Hands, Giant Lies »",
+    slug: "tshirt-tiny-hands",
+    description: "Mains dorées tenant un mégaphone, texte TINY HANDS GIANT LIES. La désinformation à l'échelle présidentielle. Gildan 64000 Softstyle, coton ring-spun.",
+    category: "tshirt",
+    basePrice: 27.99,
+    imageUrl: "/products/tshirt-tiny-hands.jpg",
+    supplier: "Printify",
+    supplierModel: "Gildan 64000",
+    supplierCost: 9.95,
+    supplierProductId: "6",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "White", hex: "#f5f0e8" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Heather", hex: "#3a3a3a" },
+      { name: "Sport Grey", hex: "#9a9a9a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "T-Shirt « Covfefe Resistance Dept. »",
+    slug: "tshirt-covfefe",
+    description: "Tampon officiel rouge COVFEFE - DEPT OF RESISTANCE. Quand un tweet typo devient un mouvement. Comfort Colors 1717, coton ring-spun garment-dyed, toucher vintage.",
+    category: "tshirt",
+    basePrice: 32.99,
+    imageUrl: "/products/tshirt-covfefe.jpg",
+    supplier: "Printful",
+    supplierModel: "Comfort Colors 1717",
+    supplierCost: 15.95,
+    supplierProductId: "1033",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Pepper", hex: "#3a3a3a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Forest", hex: "#1a3a2a" },
+      { name: "Burgundy", hex: "#5a1a2a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "T-Shirt « Fact Check the Feed »",
+    slug: "tshirt-fact-check",
+    description: "Loupe rouge sur écran de téléphone, texte FACT CHECK THE FEED. La désinformation est une épidémie. Vérifiez avant de partager. Bella+Canvas 3413 Tri-Blend, toucher soyeux.",
+    category: "tshirt",
+    basePrice: 31.99,
+    imageUrl: "/products/tshirt-fact-check.jpg",
+    supplier: "Printify",
+    supplierModel: "Bella+Canvas 3413",
+    supplierCost: 13.50,
+    supplierProductId: "302",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Grey Heather", hex: "#3a3a3a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Athletic Heather", hex: "#8a8a8a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "T-Shirt « No Planet B »",
+    slug: "tshirt-no-planet-b",
+    description: "Planète Terre protégée par des mains, texte NO PLANET B. Il n'y a pas de planète de rechange. Bella+Canvas 3001ECO, coton recyclé, écologique.",
+    category: "tshirt",
+    basePrice: 29.99,
+    imageUrl: "/products/tshirt-no-planet-b.jpg",
+    supplier: "Printify",
+    supplierModel: "Bella+Canvas 3001ECO",
+    supplierCost: 14.50,
+    supplierProductId: "471",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Heather Forest", hex: "#1a3a2a" },
+      { name: "Dark Grey Heather", hex: "#3a3a3a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Athletic Heather", hex: "#8a8a8a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  // ==================== 5 NOUVEAUX HOODIES ====================
+  {
+    name: "Hoodie « No Kings, No Con Men »",
+    slug: "hoodie-no-kings",
+    description: "Couronne renversée en flammes, texte NO KINGS NO CON MEN. L'Amérique n'est pas une monarchie. Gildan 18500 Heavy Blend, 50/50 coton-polyester, capuche ajustable.",
+    category: "hoodie",
+    basePrice: 54.99,
+    imageUrl: "/products/hoodie-no-kings.jpg",
+    supplier: "Printify",
+    supplierModel: "Gildan 18500",
+    supplierCost: 21.58,
+    supplierProductId: "77",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Dark Heather", hex: "#3a3a3a" },
+      { name: "Sport Grey", hex: "#9a9a9a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "Hoodie « Grift Alert »",
+    slug: "hoodie-grift-alert",
+    description: "Alarme rouge avec signe dollar, texte GRIFT ALERT - FOLLOW THE MONEY. Suivez l'argent, toujours. Bella+Canvas 3719, premium, coton peigné.",
+    category: "hoodie",
+    basePrice: 59.99,
+    imageUrl: "/products/hoodie-grift-alert.jpg",
+    supplier: "Printful",
+    supplierModel: "Bella+Canvas 3719",
+    supplierCost: 25.95,
+    supplierProductId: "173",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Dark Grey Heather", hex: "#3a3a3a" },
+      { name: "Forest", hex: "#1a3a2a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "Hoodie « Not My Circus »",
+    slug: "hoodie-not-my-circus",
+    description: "Masque de clown doré barré, texte NOT MY CIRCUS NOT MY CLOWN. Le cirque présidentaire est annulé. Gildan 18500, capuche doublée, poche kangourou.",
+    category: "hoodie",
+    basePrice: 54.99,
+    imageUrl: "/products/hoodie-not-my-circus.jpg",
+    supplier: "Printify",
+    supplierModel: "Gildan 18500",
+    supplierCost: 21.58,
+    supplierProductId: "77",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Heather", hex: "#3a3a3a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Sport Grey", hex: "#9a9a9a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "Hoodie « Keep Oil in the Ground »",
+    slug: "hoodie-keep-oil-ground",
+    description: "Pipeline barré avec racines d'arbres, texte KEEP OIL IN THE GROUND. L'industrie pétrolière est le problème, pas la solution. Bella+Canvas 3719, premium.",
+    category: "hoodie",
+    basePrice: 59.99,
+    imageUrl: "/products/hoodie-keep-oil-ground.jpg",
+    supplier: "Printful",
+    supplierModel: "Bella+Canvas 3719",
+    supplierCost: 25.95,
+    supplierProductId: "173",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Heather Forest", hex: "#1a3a2a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Grey Heather", hex: "#3a3a3a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  {
+    name: "Hoodie « Memes Aren't Evidence »",
+    slug: "hoodie-memes-evidence",
+    description: "Cerveau mécanique en engrenages, texte MEMES ≠ EVIDENCE. Un meme n'est pas une source. Pensez critiques. Gildan 18600 Full-Zip, capuche zippée.",
+    category: "hoodie",
+    basePrice: 57.99,
+    imageUrl: "/products/hoodie-memes-evidence.jpg",
+    supplier: "Printify",
+    supplierModel: "Gildan 18600",
+    supplierCost: 24.50,
+    supplierProductId: "129",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Heather", hex: "#3a3a3a" },
+      { name: "Sport Grey", hex: "#9a9a9a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+    ],
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+  },
+  // ==================== 3 NOUVELLES TUQUES ====================
+  {
+    name: "Tuque « Truth Matters »",
+    slug: "tuque-truth-matters",
+    description: "Balance penchée vers la vérité, texte TRUTH MATTERS. Les mensonges tuent la démocratie. Tuque tricot 100% acrylique, doublure polaire, rebord rabattu.",
+    category: "accessory",
+    basePrice: 24.99,
+    imageUrl: "/products/tuque-truth-matters.jpg",
+    supplier: "Printful",
+    supplierModel: "Cuffed Knit Beanie",
+    supplierCost: 12.95,
+    supplierProductId: "284",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Grey", hex: "#3a3a3a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Red", hex: "#8a1a1a" },
+    ],
+    sizes: ["Unique"],
+  },
+  {
+    name: "Tuque « Question Everything »",
+    slug: "tuque-question-everything",
+    description: "Point d'interrogation en flèches entremêlées, texte QUESTION EVERYTHING. Vérifiez, recoupez, décidez. Tuque tricot 100% acrylique.",
+    category: "accessory",
+    basePrice: 22.99,
+    imageUrl: "/products/tuque-question-everything.jpg",
+    supplier: "Printify",
+    supplierModel: "Cuffed Knit Beanie",
+    supplierCost: 10.50,
+    supplierProductId: "425",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Grey", hex: "#3a3a3a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+    ],
+    sizes: ["Unique"],
+  },
+  {
+    name: "Tuque « Resist Every Day »",
+    slug: "tuque-resist-every-day",
+    description: "Poing levé avec pousse verte, texte RESIST EVERY DAY. La résistance est quotidienne. Tuque tricot 100% acrylique, doublure polaire.",
+    category: "accessory",
+    basePrice: 24.99,
+    imageUrl: "/products/tuque-resist-every-day.jpg",
+    supplier: "Gooten",
+    supplierModel: "Cuffed Knit Beanie",
+    supplierCost: 11.25,
+    supplierProductId: "gooten_beanie_001",
+    colors: [
+      { name: "Black", hex: "#1a1a1a" },
+      { name: "Navy", hex: "#1a2b4a" },
+      { name: "Dark Grey", hex: "#3a3a3a" },
+      { name: "Maroon", hex: "#5a1a2a" },
+      { name: "Forest Green", hex: "#1a3a2a" },
+    ],
+    sizes: ["Unique"],
+  },
+  // ==================== 3 NOUVEAUX ACCESSOIRES ====================
+  {
+    name: "Tasse « Resist Every Day »",
+    slug: "mug-resist-every-day",
+    description: "Poing levé avec pousse verte, texte RESIST EVERY DAY. Le café du matin pour commencer une journée de résistance. Mug céramique 11oz, émail premium, compatible lave-vaisselle.",
+    category: "accessory",
+    basePrice: 16.99,
+    imageUrl: "/products/mug-resist-every-day.jpg",
+    supplier: "Printful",
+    supplierModel: "White Glossy Mug 11oz",
+    supplierCost: 7.95,
+    supplierProductId: "925",
+    colors: [
+      { name: "White", hex: "#f5f0e8" },
+      { name: "Black", hex: "#1a1a1a" },
+    ],
+    sizes: ["11oz"],
+  },
+  {
+    name: "Sous-verre « Organize Mobilize »",
+    slug: "coaster-organize-mobilize",
+    description: "Mains jointes en cercle, texte ORGANIZE MOBILIZE - SOLIDARITY. Organisez-vous, mobilisez-vous, solidaires. Liège naturel, diamètre 10cm, résistant à l'eau.",
+    category: "accessory",
+    basePrice: 14.99,
+    imageUrl: "/products/coaster-organize-mobilize.jpg",
+    supplier: "Printify",
+    supplierModel: "Cork-Backed Coaster",
+    supplierCost: 3.50,
+    supplierProductId: "coaster_cork",
+    colors: [
+      { name: "Natural Cork", hex: "#c4a882" },
+      { name: "Black", hex: "#1a1a1a" },
+    ],
+    sizes: ["Set de 4"],
+  },
+  {
+    name: "Sac-tote « No Planet B »",
+    slug: "tote-no-planet-b",
+    description: "Planète Terre protégée par des mains, texte NO PLANET B. Sac-tote écologique en coton recyclé. Remplacez les sacs plastiques, portez le message partout.",
+    category: "accessory",
+    basePrice: 19.99,
+    imageUrl: "/products/tote-no-planet-b.jpg",
+    supplier: "Printful",
+    supplierModel: "Eco Tote Bag EC8000",
+    supplierCost: 8.95,
+    supplierProductId: "1078",
+    colors: [
+      { name: "Natural", hex: "#c4a882" },
+      { name: "Black", hex: "#1a1a1a" },
+    ],
+    sizes: ["Unique"],
+  },
+];
+
+async function main() {
+  console.log('Seeding database...');
+
+  // Create admin user
+  const adminEmail = process.env.ADMIN_EMAIL_DEFAULT || 'admin@resistnco.ca';
+  const adminPassword = process.env.ADMIN_PASSWORD_DEFAULT || 'ChangeMeNow123!';
+  const passwordHash = await bcrypt.hash(adminPassword, 10);
+
+  await prisma.user.upsert({
+    where: { email: adminEmail },
+    update: {},
+    create: { email: adminEmail, passwordHash, role: 'admin' },
+  });
+  console.log(`Admin user created: ${adminEmail}`);
+
+  // Create settings
+  const settings = [
+    { key: 'site_name', value: 'Resist N Co' },
+    { key: 'site_email', value: 'commandes@resistnco.ca' },
+    { key: 'interac_email', value: process.env.INTERAC_EMAIL || 'paiements@resistnco.ca' },
+    { key: 'interac_instructions', value: process.env.INTERAC_PAYMENT_INSTRUCTIONS || 'Connectez-vous à votre application bancaire en ligne, sélectionnez Virement Interac, et envoyez le montant en utilisant le numéro de commande comme référence.' },
+    { key: 'shipping_flat_rate', value: '9.99' },
+    { key: 'shipping_free_threshold', value: '75' },
+    { key: 'tax_tps', value: '0.05' }, // 5% TPS
+    { key: 'tax_tvq', value: '0.09975' }, // 9.975% TVQ Québec
+    { key: 'tax_tvh', value: '0.15' }, // 15% TVH (maritimes)
+    { key: 'currency', value: 'CAD' },
+  ];
+
+  for (const s of settings) {
+    await prisma.setting.upsert({
+      where: { key: s.key },
+      update: {},
+      create: s,
+    });
+  }
+  console.log('Settings created');
+
+  // Create products with variants (upsert by slug)
+  for (const p of SEED_PRODUCTS) {
+    const product = await prisma.product.upsert({
+      where: { slug: p.slug },
+      update: {
+        name: p.name,
+        description: p.description,
+        category: p.category,
+        basePrice: p.basePrice,
+        imageUrl: p.imageUrl,
+        supplier: p.supplier,
+        supplierModel: p.supplierModel,
+        supplierCost: p.supplierCost,
+        supplierProductId: p.supplierProductId,
+        isActive: true,
+      },
+      create: {
+        name: p.name,
+        slug: p.slug,
+        description: p.description,
+        category: p.category,
+        basePrice: p.basePrice,
+        imageUrl: p.imageUrl,
+        supplier: p.supplier,
+        supplierModel: p.supplierModel,
+        supplierCost: p.supplierCost,
+        supplierProductId: p.supplierProductId,
+        isActive: true,
+        images: {
+          create: { url: p.imageUrl, altText: p.name, position: 0 },
+        },
+      },
+    });
+
+    // Create variants for each color × size combination
+    for (const color of p.colors) {
+      for (const size of p.sizes) {
+        await prisma.productVariant.create({
+          data: {
+            productId: product.id,
+            size,
+            color: color.name,
+            colorHex: color.hex,
+            sku: `${p.slug.toUpperCase().replace(/-/g, '_')}-${color.name.toUpperCase().replace(/\s+/g, '')}-${size}`.substring(0, 50),
+            price: p.basePrice,
+            inStock: true,
+          },
+        });
+      }
+    }
+    console.log(`Product created: ${p.name} (${p.colors.length} colors × ${p.sizes.length} sizes = ${p.colors.length * p.sizes.length} variants)`);
+  }
+
+  console.log('Seed completed successfully!');
+}
+
+main()
+  .catch((e) => {
+    console.error('Seed error:', e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "tshirt-resist",
+    "path": "pod_sync/designs/tshirt-resist.png",
+    "category": "tshirt"
+  },
+  {
+    "slug": "tshirt-antifascist",
+    "path": "pod_sync/designs/tshirt-antifascist.png",
+    "category": "tshirt"
+  },
+  {
+    "slug": "tshirt-solidarity",
+    "path": "pod_sync/designs/tshirt-solidarity.png",
+    "category": "tshirt"
+  },
+  {
+    "slug": "tshirt-bye-don",
+    "path": "pod_sync/designs/tshirt-bye-don.png",
+    "category": "tshirt"
+  },
+  {
+    "slug": "tshirt-covfefe",
+    "path": "pod_sync/designs/tshirt-covfefe.png",
+    "category": "tshirt"
+  },
+  {
+    "slug": "tshirt-tiny-hands",
+    "path": "pod_sync/designs/tshirt-tiny-hands.png",
+    "category": "tshirt"
+  },
+  {
+    "slug": "tshirt-fact-check",
+    "path": "pod_sync/designs/tshirt-fact-check.png",
+    "category": "tshirt"
+  },
+  {
+    "slug": "tshirt-no-planet-b",
+    "path": "pod_sync/designs/tshirt-no-planet-b.png",
+    "category": "tshirt"
+  },
+  {
+    "slug": "hoodie-climate",
+    "path": "pod_sync/designs/hoodie-climate.png",
+    "category": "hoodie"
+  },
+  {
+    "slug": "hoodie-nopasaran",
+    "path": "pod_sync/designs/hoodie-nopasaran.png",
+    "category": "hoodie"
+  },
+  {
+    "slug": "hoodie-grift-alert",
+    "path": "pod_sync/designs/hoodie-grift-alert.png",
+    "category": "hoodie"
+  },
+  {
+    "slug": "hoodie-keep-oil",
+    "path": "pod_sync/designs/hoodie-keep-oil.png",
+    "category": "hoodie"
+  },
+  {
+    "slug": "hoodie-no-kings",
+    "path": "pod_sync/designs/hoodie-no-kings.png",
+    "category": "hoodie"
+  },
+  {
+    "slug": "hoodie-not-my-circus",
+    "path": "pod_sync/designs/hoodie-not-my-circus.png",
+    "category": "hoodie"
+  },
+  {
+    "slug": "hoodie-memes",
+    "path": "pod_sync/designs/hoodie-memes.png",
+    "category": "hoodie"
+  },
+  {
+    "slug": "tuque-power",
+    "path": "pod_sync/designs/tuque-power.png",
+    "category": "tuque"
+  },
+  {
+    "slug": "tuque-truth",
+    "path": "pod_sync/designs/tuque-truth.png",
+    "category": "tuque"
+  },
+  {
+    "slug": "tuque-question",
+    "path": "pod_sync/designs/tuque-question.png",
+    "category": "tuque"
+  },
+  {
+    "slug": "tuque-resist-every-day",
+    "path": "pod_sync/designs/tuque-resist-every-day.png",
+    "category": "tuque"
+  },
+  {
+    "slug": "mug-resist-every-day",
+    "path": "pod_sync/designs/mug-resist-every-day.png",
+    "category": "mug"
+  },
+  {
+    "slug": "mug-defend",
+    "path": "pod_sync/designs/mug-defend.png",
+    "category": "mug"
+  },
+  {
+    "slug": "coaster-organize",
+    "path": "pod_sync/designs/coaster-organize.png",
+    "category": "coaster"
+  },
+  {
+    "slug": "coaster-organize-mobilize",
+    "path": "pod_sync/designs/coaster-organize-mobilize.png",
+    "category": "coaster"
+  },
+  {
+    "slug": "tote-no-planet-b",
+    "path": "pod_sync/designs/tote-no-planet-b.png",
+    "category": "tote"
+  }
+]

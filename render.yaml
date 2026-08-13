@@ -1,0 +1,80 @@
+# ============================================================
+# Resist N Co — Render Blueprint
+# ============================================================
+# Deploys a Node.js web service with a persistent disk for SQLite.
+# ============================================================
+
+services:
+  - type: web
+    name: resist-n-co
+    runtime: node
+    plan: starter
+    region: oregon
+    buildCommand: ./render-build.sh
+    startCommand: ./render-start.sh
+    healthCheckPath: /api/health
+    autoDeploy: true
+    
+    # Persistent disk for SQLite database
+    disks:
+      - name: resist-n-co-db
+        mountPath: /var/data
+        sizeGB: 1
+    
+    # Environment variables
+    # Secrets (set these in Render dashboard or via render.yaml)
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: file:/var/data/dev.db
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: SITE_URL
+        value: https://resist-n-co.onrender.com
+      
+      # Stripe (LIVE keys — set in Render dashboard)
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      
+      # Interac
+      - key: INTERAC_EMAIL
+        value: resistnco@protonmail.com
+      
+      # Printify (POD supplier)
+      - key: PRINTIFY_API_TOKEN
+        sync: false
+      - key: PRINTIFY_SHOP_ID
+        value: "28569727"
+      
+      # Printful (backup supplier)
+      - key: PRINTFUL_API_KEY
+        sync: false
+      
+      # Gelato (backup supplier)
+      - key: GELATO_API_KEY
+        sync: false
+      
+      # Email (Resend)
+      - key: EMAIL_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        value: "Resist N Co <commandes@resistandco.ca>"
+      - key: ADMIN_EMAIL
+        value: resistnco@protonmail.com
+      
+      # Admin credentials
+      - key: ADMIN_EMAIL_DEFAULT
+        value: resistnco@protonmail.com
+      - key: ADMIN_PASSWORD_DEFAULT
+        sync: false
+      
+      # Gmail (backup email)
+      - key: GMAIL_USER
+        value: acappelli1983@gmail.com
+      - key: GMAIL_APP_PASSWORD
+        sync: false

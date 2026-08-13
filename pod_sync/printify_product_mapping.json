@@ -1,0 +1,182 @@
+{
+  "product_id": "6a7d8ae042b976d3f302740a",
+  "printify_product_id": "6a7d8ae042b976d3f302740a",
+  "db_product_id": 2,
+  "variants": [
+    {
+      "variant_id": 18075,
+      "color": "Athletic Heather",
+      "size": "XS"
+    },
+    {
+      "variant_id": 18076,
+      "color": "Athletic Heather",
+      "size": "S"
+    },
+    {
+      "variant_id": 18077,
+      "color": "Athletic Heather",
+      "size": "M"
+    },
+    {
+      "variant_id": 18078,
+      "color": "Athletic Heather",
+      "size": "L"
+    },
+    {
+      "variant_id": 18079,
+      "color": "Athletic Heather",
+      "size": "XL"
+    },
+    {
+      "variant_id": 18080,
+      "color": "Athletic Heather",
+      "size": "2XL"
+    },
+    {
+      "variant_id": 18081,
+      "color": "Athletic Heather",
+      "size": "3XL"
+    },
+    {
+      "variant_id": 18099,
+      "color": "Black",
+      "size": "XS"
+    },
+    {
+      "variant_id": 18100,
+      "color": "Black",
+      "size": "S"
+    },
+    {
+      "variant_id": 18101,
+      "color": "Black",
+      "size": "M"
+    },
+    {
+      "variant_id": 18102,
+      "color": "Black",
+      "size": "L"
+    },
+    {
+      "variant_id": 18103,
+      "color": "Black",
+      "size": "XL"
+    },
+    {
+      "variant_id": 18104,
+      "color": "Black",
+      "size": "2XL"
+    },
+    {
+      "variant_id": 18105,
+      "color": "Black",
+      "size": "3XL"
+    },
+    {
+      "variant_id": 18395,
+      "color": "Navy",
+      "size": "XS"
+    },
+    {
+      "variant_id": 18396,
+      "color": "Navy",
+      "size": "S"
+    },
+    {
+      "variant_id": 18397,
+      "color": "Navy",
+      "size": "M"
+    },
+    {
+      "variant_id": 18398,
+      "color": "Navy",
+      "size": "L"
+    },
+    {
+      "variant_id": 18399,
+      "color": "Navy",
+      "size": "XL"
+    },
+    {
+      "variant_id": 18400,
+      "color": "Navy",
+      "size": "2XL"
+    },
+    {
+      "variant_id": 18401,
+      "color": "Navy",
+      "size": "3XL"
+    },
+    {
+      "variant_id": 18443,
+      "color": "Red",
+      "size": "XS"
+    },
+    {
+      "variant_id": 18444,
+      "color": "Red",
+      "size": "S"
+    },
+    {
+      "variant_id": 18445,
+      "color": "Red",
+      "size": "M"
+    },
+    {
+      "variant_id": 18446,
+      "color": "Red",
+      "size": "L"
+    },
+    {
+      "variant_id": 18447,
+      "color": "Red",
+      "size": "XL"
+    },
+    {
+      "variant_id": 18448,
+      "color": "Red",
+      "size": "2XL"
+    },
+    {
+      "variant_id": 18449,
+      "color": "Red",
+      "size": "3XL"
+    },
+    {
+      "variant_id": 18539,
+      "color": "White",
+      "size": "XS"
+    },
+    {
+      "variant_id": 18540,
+      "color": "White",
+      "size": "S"
+    },
+    {
+      "variant_id": 18541,
+      "color": "White",
+      "size": "M"
+    },
+    {
+      "variant_id": 18542,
+      "color": "White",
+      "size": "L"
+    },
+    {
+      "variant_id": 18543,
+      "color": "White",
+      "size": "XL"
+    },
+    {
+      "variant_id": 18544,
+      "color": "White",
+      "size": "2XL"
+    },
+    {
+      "variant_id": 18545,
+      "color": "White",
+      "size": "3XL"
+    }
+  ]
+}

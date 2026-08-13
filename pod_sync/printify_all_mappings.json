@@ -1,0 +1,2362 @@
+[
+  {
+    "db_product_id": 10,
+    "printify_product_id": "6a7d8b099800dbbea60f9f41",
+    "blueprint_id": 6,
+    "provider_id": 29,
+    "file_id": "6a7d8b076c668ef70ffec7a9",
+    "variants": [
+      {
+        "variant_id": 11902,
+        "color": "Dark Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 11903,
+        "color": "Dark Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 11904,
+        "color": "Dark Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 11905,
+        "color": "Dark Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 11906,
+        "color": "Dark Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 11907,
+        "color": "Dark Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 11986,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 11987,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 11988,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 11989,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 11990,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 11991,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 12070,
+        "color": "Sport Grey",
+        "size": "L"
+      },
+      {
+        "variant_id": 12071,
+        "color": "Sport Grey",
+        "size": "M"
+      },
+      {
+        "variant_id": 12072,
+        "color": "Sport Grey",
+        "size": "S"
+      },
+      {
+        "variant_id": 12073,
+        "color": "Sport Grey",
+        "size": "XL"
+      },
+      {
+        "variant_id": 12074,
+        "color": "Sport Grey",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 12075,
+        "color": "Sport Grey",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 12100,
+        "color": "White",
+        "size": "L"
+      },
+      {
+        "variant_id": 12101,
+        "color": "White",
+        "size": "M"
+      },
+      {
+        "variant_id": 12102,
+        "color": "White",
+        "size": "S"
+      },
+      {
+        "variant_id": 12103,
+        "color": "White",
+        "size": "XL"
+      },
+      {
+        "variant_id": 12104,
+        "color": "White",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 12105,
+        "color": "White",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 12124,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 12125,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 12126,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 12127,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 12128,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 12129,
+        "color": "Black",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 14,
+    "printify_product_id": "6a7d8b1292ca76a3020eca06",
+    "blueprint_id": 77,
+    "provider_id": 27,
+    "file_id": "6a7d8b10e173371d3c7aec70",
+    "variants": [
+      {
+        "variant_id": 32878,
+        "color": "Dark Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 32879,
+        "color": "Dark Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 32880,
+        "color": "Dark Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 32881,
+        "color": "Dark Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32883,
+        "color": "Dark Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32886,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 32887,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 32888,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 32889,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32890,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32894,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 32895,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 32896,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 32897,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32898,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32899,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32902,
+        "color": "Sport Grey",
+        "size": "S"
+      },
+      {
+        "variant_id": 32903,
+        "color": "Sport Grey",
+        "size": "M"
+      },
+      {
+        "variant_id": 32904,
+        "color": "Sport Grey",
+        "size": "L"
+      },
+      {
+        "variant_id": 32905,
+        "color": "Sport Grey",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32906,
+        "color": "Sport Grey",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32907,
+        "color": "Sport Grey",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32918,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 32919,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 32920,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 32921,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32922,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32923,
+        "color": "Black",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 16,
+    "printify_product_id": "6a7d8b1674338bde0e0c6aed",
+    "blueprint_id": 77,
+    "provider_id": 27,
+    "file_id": "6a7d8b156c668ef70ffec7e2",
+    "variants": [
+      {
+        "variant_id": 32878,
+        "color": "Dark Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 32879,
+        "color": "Dark Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 32880,
+        "color": "Dark Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 32881,
+        "color": "Dark Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32883,
+        "color": "Dark Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32886,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 32887,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 32888,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 32889,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32890,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32894,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 32895,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 32896,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 32897,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32898,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32899,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32902,
+        "color": "Sport Grey",
+        "size": "S"
+      },
+      {
+        "variant_id": 32903,
+        "color": "Sport Grey",
+        "size": "M"
+      },
+      {
+        "variant_id": 32904,
+        "color": "Sport Grey",
+        "size": "L"
+      },
+      {
+        "variant_id": 32905,
+        "color": "Sport Grey",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32906,
+        "color": "Sport Grey",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32907,
+        "color": "Sport Grey",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32918,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 32919,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 32920,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 32921,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32922,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32923,
+        "color": "Black",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 5,
+    "printify_product_id": "6a7d8b4d78b5e608bb07eab6",
+    "blueprint_id": 77,
+    "provider_id": 27,
+    "file_id": "6a7d8b4bb13ccde9908b15f2",
+    "variants": [
+      {
+        "variant_id": 32878,
+        "color": "Dark Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 32879,
+        "color": "Dark Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 32880,
+        "color": "Dark Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 32881,
+        "color": "Dark Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32883,
+        "color": "Dark Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32886,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 32887,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 32888,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 32889,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32890,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32894,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 32895,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 32896,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 32897,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32898,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32899,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32902,
+        "color": "Sport Grey",
+        "size": "S"
+      },
+      {
+        "variant_id": 32903,
+        "color": "Sport Grey",
+        "size": "M"
+      },
+      {
+        "variant_id": 32904,
+        "color": "Sport Grey",
+        "size": "L"
+      },
+      {
+        "variant_id": 32905,
+        "color": "Sport Grey",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32906,
+        "color": "Sport Grey",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32907,
+        "color": "Sport Grey",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32918,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 32919,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 32920,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 32921,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32922,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32923,
+        "color": "Black",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 12,
+    "printify_product_id": "6a7d8b5242b976d3f302746a",
+    "blueprint_id": 184,
+    "provider_id": 3,
+    "file_id": "6a7d8b50e173371d3c7aed2c",
+    "variants": [
+      {
+        "variant_id": 40438,
+        "color": "Solid Black TriBlend",
+        "size": "XS"
+      },
+      {
+        "variant_id": 40468,
+        "color": "Athletic Grey TriBlend",
+        "size": "S"
+      },
+      {
+        "variant_id": 40474,
+        "color": "Black Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 40504,
+        "color": "Grey TriBlend",
+        "size": "S"
+      },
+      {
+        "variant_id": 40513,
+        "color": "Navy TriBlend",
+        "size": "S"
+      },
+      {
+        "variant_id": 40531,
+        "color": "Solid Black TriBlend",
+        "size": "S"
+      },
+      {
+        "variant_id": 40567,
+        "color": "Black Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 40597,
+        "color": "Grey TriBlend",
+        "size": "M"
+      },
+      {
+        "variant_id": 40606,
+        "color": "Navy TriBlend",
+        "size": "M"
+      },
+      {
+        "variant_id": 40654,
+        "color": "Athletic Grey TriBlend",
+        "size": "L"
+      },
+      {
+        "variant_id": 40660,
+        "color": "Black Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 40690,
+        "color": "Grey TriBlend",
+        "size": "L"
+      },
+      {
+        "variant_id": 40747,
+        "color": "Athletic Grey TriBlend",
+        "size": "XL"
+      },
+      {
+        "variant_id": 40783,
+        "color": "Grey TriBlend",
+        "size": "XL"
+      },
+      {
+        "variant_id": 40876,
+        "color": "Grey TriBlend",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 40903,
+        "color": "Solid Black TriBlend",
+        "size": "2XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 13,
+    "printify_product_id": "6a7d8b5742b976d3f302746e",
+    "blueprint_id": 6,
+    "provider_id": 29,
+    "file_id": "6a7d8b5525d097a0e81d3947",
+    "variants": [
+      {
+        "variant_id": 11902,
+        "color": "Dark Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 11903,
+        "color": "Dark Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 11904,
+        "color": "Dark Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 11905,
+        "color": "Dark Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 11906,
+        "color": "Dark Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 11907,
+        "color": "Dark Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 11986,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 11987,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 11988,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 11989,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 11990,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 11991,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 12070,
+        "color": "Sport Grey",
+        "size": "L"
+      },
+      {
+        "variant_id": 12071,
+        "color": "Sport Grey",
+        "size": "M"
+      },
+      {
+        "variant_id": 12072,
+        "color": "Sport Grey",
+        "size": "S"
+      },
+      {
+        "variant_id": 12073,
+        "color": "Sport Grey",
+        "size": "XL"
+      },
+      {
+        "variant_id": 12074,
+        "color": "Sport Grey",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 12075,
+        "color": "Sport Grey",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 12100,
+        "color": "White",
+        "size": "L"
+      },
+      {
+        "variant_id": 12101,
+        "color": "White",
+        "size": "M"
+      },
+      {
+        "variant_id": 12102,
+        "color": "White",
+        "size": "S"
+      },
+      {
+        "variant_id": 12103,
+        "color": "White",
+        "size": "XL"
+      },
+      {
+        "variant_id": 12104,
+        "color": "White",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 12105,
+        "color": "White",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 12124,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 12125,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 12126,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 12127,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 12128,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 12129,
+        "color": "Black",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 18,
+    "printify_product_id": "6a7d8b5c2b0b06235903ed66",
+    "blueprint_id": 175,
+    "provider_id": 99,
+    "file_id": "6a7d8b5b25d097a0e81d3949",
+    "variants": [
+      {
+        "variant_id": 39823,
+        "color": "Athletic Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 39826,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 39829,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 39841,
+        "color": "Athletic Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 39844,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 39847,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 39859,
+        "color": "Athletic Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 39862,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 39865,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 39877,
+        "color": "Athletic Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39880,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39883,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39895,
+        "color": "Athletic Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 39898,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 39901,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 64450,
+        "color": "Athletic Heather",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64451,
+        "color": "Black",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64452,
+        "color": "Navy",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64461,
+        "color": "Maroon",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64468,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 64475,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 64482,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 64489,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 64496,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 72016,
+        "color": "Forest",
+        "size": "S"
+      },
+      {
+        "variant_id": 72019,
+        "color": "Forest",
+        "size": "M"
+      },
+      {
+        "variant_id": 72022,
+        "color": "Forest",
+        "size": "L"
+      },
+      {
+        "variant_id": 72025,
+        "color": "Forest",
+        "size": "XL"
+      },
+      {
+        "variant_id": 72028,
+        "color": "Forest",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 72034,
+        "color": "Forest",
+        "size": "XS"
+      }
+    ]
+  },
+  {
+    "db_product_id": 20,
+    "printify_product_id": "6a7d8b602b0b06235903ed69",
+    "blueprint_id": 1691,
+    "provider_id": 410,
+    "file_id": "6a7d8b5f25d097a0e81d394c",
+    "variants": [
+      {
+        "variant_id": 116417,
+        "color": "Black",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116421,
+        "color": "Dark Grey",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116425,
+        "color": "Navy",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116428,
+        "color": "Red",
+        "size": "One size"
+      }
+    ]
+  },
+  {
+    "db_product_id": 8,
+    "printify_product_id": "6a7d8b6392ca76a3020eca57",
+    "blueprint_id": 480,
+    "provider_id": 70,
+    "file_id": "6a7d8b62692e4f0a8253c93b",
+    "variants": [
+      {
+        "variant_id": 71689,
+        "color": null,
+        "size": "3.75\" \u00d7 3.75\""
+      },
+      {
+        "variant_id": 74633,
+        "color": null,
+        "size": "4\" x 4\""
+      }
+    ]
+  },
+  {
+    "db_product_id": 23,
+    "printify_product_id": "6a7d8b662b0b06235903ed6f",
+    "blueprint_id": 480,
+    "provider_id": 70,
+    "file_id": "6a7d8b65621ad26bf4be5716",
+    "variants": [
+      {
+        "variant_id": 71689,
+        "color": null,
+        "size": "3.75\" \u00d7 3.75\""
+      },
+      {
+        "variant_id": 74633,
+        "color": null,
+        "size": "4\" x 4\""
+      }
+    ]
+  },
+  {
+    "db_product_id": 1,
+    "printify_product_id": "6a7d8c7d78b5e608bb07eb54",
+    "blueprint_id": 12,
+    "provider_id": 29,
+    "file_id": "6a7d8c7c692e4f0a8253c9ac",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 18100,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 18101,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 18102,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 18103,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18104,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18105,
+        "color": "Black",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18148,
+        "color": "Dark Grey Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 18149,
+        "color": "Dark Grey Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 18150,
+        "color": "Dark Grey Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 18151,
+        "color": "Dark Grey Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18152,
+        "color": "Dark Grey Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18153,
+        "color": "Dark Grey Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18372,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 18373,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 18374,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 18375,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18376,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18377,
+        "color": "Maroon",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18396,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 18397,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 18398,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 18399,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18400,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18401,
+        "color": "Navy",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 4,
+    "printify_product_id": "6a7d8c849800dbbea60fa08e",
+    "blueprint_id": 77,
+    "provider_id": 27,
+    "file_id": "6a7d8c836c668ef70ffec81a",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 32878,
+        "color": "Dark Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 32879,
+        "color": "Dark Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 32880,
+        "color": "Dark Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 32881,
+        "color": "Dark Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32883,
+        "color": "Dark Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32894,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 32895,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 32896,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 32897,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32898,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32899,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32902,
+        "color": "Sport Grey",
+        "size": "S"
+      },
+      {
+        "variant_id": 32903,
+        "color": "Sport Grey",
+        "size": "M"
+      },
+      {
+        "variant_id": 32904,
+        "color": "Sport Grey",
+        "size": "L"
+      },
+      {
+        "variant_id": 32905,
+        "color": "Sport Grey",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32906,
+        "color": "Sport Grey",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32907,
+        "color": "Sport Grey",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 32918,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 32919,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 32920,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 32921,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 32922,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 32923,
+        "color": "Black",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 6,
+    "printify_product_id": "6a7d8c899800dbbea60fa096",
+    "blueprint_id": 1691,
+    "provider_id": 410,
+    "file_id": "6a7d8c8750d74d4b133779e9",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 116417,
+        "color": "Black",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116421,
+        "color": "Dark Grey",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116425,
+        "color": "Navy",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116428,
+        "color": "Red",
+        "size": "One size"
+      }
+    ]
+  },
+  {
+    "db_product_id": 9,
+    "printify_product_id": "6a7d8c8c92ca76a3020ecae9",
+    "blueprint_id": 12,
+    "provider_id": 29,
+    "file_id": "6a7d8c8baee6ce1f0b94c27c",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 18100,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 18101,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 18102,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 18103,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18104,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18105,
+        "color": "Black",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18148,
+        "color": "Dark Grey Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 18149,
+        "color": "Dark Grey Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 18150,
+        "color": "Dark Grey Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 18151,
+        "color": "Dark Grey Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18152,
+        "color": "Dark Grey Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18153,
+        "color": "Dark Grey Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18372,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 18373,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 18374,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 18375,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18376,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18377,
+        "color": "Maroon",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18396,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 18397,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 18398,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 18399,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18400,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18401,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18444,
+        "color": "Red",
+        "size": "S"
+      },
+      {
+        "variant_id": 18445,
+        "color": "Red",
+        "size": "M"
+      },
+      {
+        "variant_id": 18446,
+        "color": "Red",
+        "size": "L"
+      },
+      {
+        "variant_id": 18447,
+        "color": "Red",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18448,
+        "color": "Red",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18449,
+        "color": "Red",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 11,
+    "printify_product_id": "6a7d8c922b0b06235903ee2a",
+    "blueprint_id": 6,
+    "provider_id": 29,
+    "file_id": "6a7d8c91b13ccde9908b16af",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 11986,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 11987,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 11988,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 11989,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 11990,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 11991,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 12124,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 12125,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 12126,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 12127,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 12128,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 12129,
+        "color": "Black",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 15,
+    "printify_product_id": "6a7d8c9774338bde0e0c6bff",
+    "blueprint_id": 175,
+    "provider_id": 99,
+    "file_id": "6a7d8c967a5d6b35deed1096",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 39823,
+        "color": "Athletic Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 39826,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 39829,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 39841,
+        "color": "Athletic Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 39844,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 39847,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 39859,
+        "color": "Athletic Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 39862,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 39865,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 39877,
+        "color": "Athletic Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39880,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39883,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39895,
+        "color": "Athletic Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 39898,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 39901,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 64450,
+        "color": "Athletic Heather",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64451,
+        "color": "Black",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64452,
+        "color": "Navy",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64461,
+        "color": "Maroon",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64468,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 64475,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 64482,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 64489,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 64496,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 72016,
+        "color": "Forest",
+        "size": "S"
+      },
+      {
+        "variant_id": 72019,
+        "color": "Forest",
+        "size": "M"
+      },
+      {
+        "variant_id": 72022,
+        "color": "Forest",
+        "size": "L"
+      },
+      {
+        "variant_id": 72025,
+        "color": "Forest",
+        "size": "XL"
+      },
+      {
+        "variant_id": 72028,
+        "color": "Forest",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 72034,
+        "color": "Forest",
+        "size": "XS"
+      }
+    ]
+  },
+  {
+    "db_product_id": 17,
+    "printify_product_id": "6a7d8c9b9800dbbea60fa0d6",
+    "blueprint_id": 175,
+    "provider_id": 99,
+    "file_id": "6a7d8c9a0f2643e39ef70499",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 39823,
+        "color": "Athletic Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 39826,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 39829,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 39841,
+        "color": "Athletic Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 39844,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 39847,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 39859,
+        "color": "Athletic Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 39862,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 39865,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 39877,
+        "color": "Athletic Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39880,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39883,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 39895,
+        "color": "Athletic Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 39898,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 39901,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 64450,
+        "color": "Athletic Heather",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64451,
+        "color": "Black",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64452,
+        "color": "Navy",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64461,
+        "color": "Maroon",
+        "size": "XS"
+      },
+      {
+        "variant_id": 64468,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 64475,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 64482,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 64489,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 64496,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 72016,
+        "color": "Forest",
+        "size": "S"
+      },
+      {
+        "variant_id": 72019,
+        "color": "Forest",
+        "size": "M"
+      },
+      {
+        "variant_id": 72022,
+        "color": "Forest",
+        "size": "L"
+      },
+      {
+        "variant_id": 72025,
+        "color": "Forest",
+        "size": "XL"
+      },
+      {
+        "variant_id": 72028,
+        "color": "Forest",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 72034,
+        "color": "Forest",
+        "size": "XS"
+      }
+    ]
+  },
+  {
+    "db_product_id": 19,
+    "printify_product_id": "6a7d8c9f9800dbbea60fa0e3",
+    "blueprint_id": 1691,
+    "provider_id": 410,
+    "file_id": "6a7d8c9e6c668ef70ffec82e",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 116417,
+        "color": "Black",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116421,
+        "color": "Dark Grey",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116425,
+        "color": "Navy",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116428,
+        "color": "Red",
+        "size": "One size"
+      }
+    ]
+  },
+  {
+    "db_product_id": 24,
+    "printify_product_id": "6a7d8ca442b976d3f3027557",
+    "blueprint_id": 507,
+    "provider_id": 48,
+    "file_id": "6a7d8ca3e173371d3c7aedbe",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 80815,
+        "color": "Black",
+        "size": "13\" \u00d7 13''"
+      },
+      {
+        "variant_id": 80818,
+        "color": "White",
+        "size": "13\" \u00d7 13''"
+      },
+      {
+        "variant_id": 80820,
+        "color": "Black",
+        "size": "16\" \u00d7 16''"
+      },
+      {
+        "variant_id": 80823,
+        "color": "White",
+        "size": "16\" \u00d7 16''"
+      },
+      {
+        "variant_id": 80825,
+        "color": "Black",
+        "size": "18\" \u00d7 18''"
+      },
+      {
+        "variant_id": 80828,
+        "color": "White",
+        "size": "18\" \u00d7 18''"
+      }
+    ]
+  },
+  {
+    "db_product_id": 3,
+    "printify_product_id": "6a7d8ca82b0b06235903ee7b",
+    "blueprint_id": 12,
+    "provider_id": 29,
+    "file_id": "6a7d8ca67a5d6b35deed1099",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 18100,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 18101,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 18102,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 18103,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18104,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18105,
+        "color": "Black",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18148,
+        "color": "Dark Grey Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 18149,
+        "color": "Dark Grey Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 18150,
+        "color": "Dark Grey Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 18151,
+        "color": "Dark Grey Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18152,
+        "color": "Dark Grey Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18153,
+        "color": "Dark Grey Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18372,
+        "color": "Maroon",
+        "size": "S"
+      },
+      {
+        "variant_id": 18373,
+        "color": "Maroon",
+        "size": "M"
+      },
+      {
+        "variant_id": 18374,
+        "color": "Maroon",
+        "size": "L"
+      },
+      {
+        "variant_id": 18375,
+        "color": "Maroon",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18376,
+        "color": "Maroon",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18377,
+        "color": "Maroon",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18396,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 18397,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 18398,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 18399,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18400,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18401,
+        "color": "Navy",
+        "size": "3XL"
+      }
+    ]
+  },
+  {
+    "db_product_id": 21,
+    "printify_product_id": "6a7d8cb474338bde0e0c6c41",
+    "blueprint_id": 1691,
+    "provider_id": 410,
+    "file_id": "6a7d8cb3e0df14356816902e",
+    "original_supplier": "Printful/Gelato/Gooten",
+    "variants": [
+      {
+        "variant_id": 116417,
+        "color": "Black",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116421,
+        "color": "Dark Grey",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116425,
+        "color": "Navy",
+        "size": "One size"
+      },
+      {
+        "variant_id": 116428,
+        "color": "Red",
+        "size": "One size"
+      }
+    ]
+  },
+  {
+    "db_product_id": 22,
+    "printify_product_id": "6a7d8cc39800dbbea60fa109",
+    "blueprint_id": 425,
+    "provider_id": 1,
+    "file_id": "6a7d8cc26c668ef70ffec835",
+    "original_supplier": "Printful/Gelato",
+    "variants": [
+      {
+        "variant_id": 62014,
+        "color": "",
+        "size": "15oz"
+      }
+    ]
+  },
+  {
+    "db_product_id": 7,
+    "printify_product_id": "6a7d8cc642b976d3f302757a",
+    "blueprint_id": 425,
+    "provider_id": 1,
+    "file_id": "6a7d8cc576b52db8e9e4ed53",
+    "original_supplier": "Printful/Gelato",
+    "variants": [
+      {
+        "variant_id": 62014,
+        "color": "",
+        "size": "15oz"
+      }
+    ]
+  },
+  {
+    "product_id": "6a7d8ae042b976d3f302740a",
+    "printify_product_id": "6a7d8ae042b976d3f302740a",
+    "db_product_id": 2,
+    "variants": [
+      {
+        "variant_id": 18075,
+        "color": "Athletic Heather",
+        "size": "XS"
+      },
+      {
+        "variant_id": 18076,
+        "color": "Athletic Heather",
+        "size": "S"
+      },
+      {
+        "variant_id": 18077,
+        "color": "Athletic Heather",
+        "size": "M"
+      },
+      {
+        "variant_id": 18078,
+        "color": "Athletic Heather",
+        "size": "L"
+      },
+      {
+        "variant_id": 18079,
+        "color": "Athletic Heather",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18080,
+        "color": "Athletic Heather",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18081,
+        "color": "Athletic Heather",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18099,
+        "color": "Black",
+        "size": "XS"
+      },
+      {
+        "variant_id": 18100,
+        "color": "Black",
+        "size": "S"
+      },
+      {
+        "variant_id": 18101,
+        "color": "Black",
+        "size": "M"
+      },
+      {
+        "variant_id": 18102,
+        "color": "Black",
+        "size": "L"
+      },
+      {
+        "variant_id": 18103,
+        "color": "Black",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18104,
+        "color": "Black",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18105,
+        "color": "Black",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18395,
+        "color": "Navy",
+        "size": "XS"
+      },
+      {
+        "variant_id": 18396,
+        "color": "Navy",
+        "size": "S"
+      },
+      {
+        "variant_id": 18397,
+        "color": "Navy",
+        "size": "M"
+      },
+      {
+        "variant_id": 18398,
+        "color": "Navy",
+        "size": "L"
+      },
+      {
+        "variant_id": 18399,
+        "color": "Navy",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18400,
+        "color": "Navy",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18401,
+        "color": "Navy",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18443,
+        "color": "Red",
+        "size": "XS"
+      },
+      {
+        "variant_id": 18444,
+        "color": "Red",
+        "size": "S"
+      },
+      {
+        "variant_id": 18445,
+        "color": "Red",
+        "size": "M"
+      },
+      {
+        "variant_id": 18446,
+        "color": "Red",
+        "size": "L"
+      },
+      {
+        "variant_id": 18447,
+        "color": "Red",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18448,
+        "color": "Red",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18449,
+        "color": "Red",
+        "size": "3XL"
+      },
+      {
+        "variant_id": 18539,
+        "color": "White",
+        "size": "XS"
+      },
+      {
+        "variant_id": 18540,
+        "color": "White",
+        "size": "S"
+      },
+      {
+        "variant_id": 18541,
+        "color": "White",
+        "size": "M"
+      },
+      {
+        "variant_id": 18542,
+        "color": "White",
+        "size": "L"
+      },
+      {
+        "variant_id": 18543,
+        "color": "White",
+        "size": "XL"
+      },
+      {
+        "variant_id": 18544,
+        "color": "White",
+        "size": "2XL"
+      },
+      {
+        "variant_id": 18545,
+        "color": "White",
+        "size": "3XL"
+      }
+    ],
+    "blueprint_id": 12,
+    "provider_id": 39,
+    "file_id": "6a7d8a9a0f2643e39ef702ae"
+  }
+]
