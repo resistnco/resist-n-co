@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { trackPurchase } from "@/lib/analytics";
 import { Link, useLocation } from "wouter";
 import { apiRequest } from "@/lib/queryClient";
 import { Button } from "@/components/ui/button";
@@ -60,6 +62,13 @@ export function PaymentSuccessPage() {
     staleTime: 60_000,
     gcTime: 5 * 60 * 1000,
   });
+
+  // Pixel Meta — evenement Purchase une seule fois par commande affichee
+  useEffect(() => {
+    if (order?.orderNumber && typeof order.total === "number") {
+      trackPurchase({ orderNumber: order.orderNumber, value: order.total });
+    }
+  }, [order?.orderNumber, order?.total]);
 
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4 py-16">

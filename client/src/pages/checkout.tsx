@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { trackInitiateCheckout } from "@/lib/analytics";
 
 const PROVINCES = [
   "Québec", "Ontario", "Colombie-Britannique", "Alberta", "Manitoba", "Saskatchewan",
@@ -59,6 +60,11 @@ export function CheckoutPage() {
       }));
 
       if (paymentMethod === "stripe") {
+        trackInitiateCheckout({
+          ids: (items ?? []).map((i: any) => String(i.productId)),
+          value: Number(total) || 0,
+          numItems: (items ?? []).reduce((n: number, i: any) => n + (i.quantity || 0), 0),
+        });
         const res = await apiRequest("POST", "/api/checkout/stripe", {
           items: cartItems,
           customerName: form.name,

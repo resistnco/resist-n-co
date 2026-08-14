@@ -461,8 +461,55 @@ export function ReturnsPage() {
         </p>
         <p>
           Tout défaut doit être signalé dans un délai de{" "}
-          <span className="text-foreground font-medium">14 jours suivant la réception</span> de
-          votre commande. Passé ce délai, aucune réclamation ne pourra être prise en compte.
+          <span className="text-foreground font-medium">30 jours suivant la livraison</span> de
+          votre commande. Ce délai est celui appliqué par nos trois partenaires d'impression
+          (Printify, Printful et Gelato) : passé cette date, ils refusent toute réclamation et
+          nous ne pouvons plus obtenir de réimpression ni de remboursement.
+        </p>
+        <p>
+          <span className="text-foreground font-medium">Vous n'avez pas à renvoyer l'article.</span>{" "}
+          Nos fournisseurs ne fournissent pas d'adresse de retour pour les produits personnalisés :
+          la photo du défaut suffit à valider la réclamation, et vous conservez l'article.
+        </p>
+      </Section>
+
+      <Section title="2b. Ce qui n'est pas considéré comme un défaut">
+        <p>
+          Certaines variations sont inhérentes à l'impression à la demande et ne donnent pas
+          droit à un remplacement :
+        </p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>
+            Un léger décalage du positionnement de l'impression. Printify applique une{" "}
+            <span className="text-foreground font-medium">tolérance de 0,5 pouce</span> sur le
+            placement en impression directe sur textile (DTG).
+          </li>
+          <li>
+            Une différence mineure de teinte entre l'aperçu à l'écran et le tissu imprimé.
+          </li>
+          <li>L'usure normale du vêtement ou de l'impression après lavage.</li>
+          <li>
+            Un problème causé par une adresse de livraison erronée ou incomplète fournie au
+            moment de la commande.
+          </li>
+          <li>
+            Un défaut provenant d'un fichier de design de faible résolution téléversé par le
+            client via l'outil de création.
+          </li>
+        </ul>
+      </Section>
+
+      <Section title="2c. Colis perdu ou retourné à l'expéditeur">
+        <p>
+          Si le suivi indique que votre colis est perdu en transit, signalez-le dans les{" "}
+          <span className="text-foreground font-medium">30 jours suivant la date de livraison
+          estimée</span>. Nous ouvrons une enquête auprès du transporteur et du fournisseur, puis
+          nous réexpédions la commande ou vous remboursons.
+        </p>
+        <p>
+          Si le colis nous revient parce que l'adresse était incomplète ou erronée, la garantie
+          des fournisseurs ne s'applique pas. Nous pouvons réexpédier, mais les frais de
+          réexpédition sont à votre charge.
         </p>
       </Section>
 
@@ -509,7 +556,7 @@ export function ReturnsPage() {
         <p>
           Si vous recevez un article différent de celui que vous avez commandé (mauvais
           produit, mauvaise taille ou mauvaise couleur par rapport à votre bon de commande),
-          il s'agit d'une erreur de notre part. Contactez-nous dans les 14 jours : nous
+          il s'agit d'une erreur de notre part. Contactez-nous dans les 30 jours : nous
           organisons le renvoi du bon article à nos frais et le remboursement ou la reprise de
           l'article erroné.
         </p>
@@ -534,8 +581,11 @@ export function ReturnsPage() {
           <a href="mailto:support@resistnco.ca" className="text-red-600 hover:underline">
             support@resistnco.ca
           </a>{" "}
-          ou appelez le 1-888-555-0199. Notre équipe est disponible du lundi au vendredi, de
-          9 h à 17 h (HE).
+          ou passez par notre{" "}
+          <Link href="/contact" className="text-red-600 hover:underline">
+            formulaire de contact
+          </Link>
+          . Nous répondons sous 1 à 2 jours ouvrables, du lundi au vendredi (heure de l'Est).
         </p>
       </Section>
     </LegalLayout>

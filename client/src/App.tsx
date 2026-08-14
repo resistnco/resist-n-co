@@ -16,6 +16,7 @@ import { CheckoutPage } from "@/pages/checkout";
 import { PaymentSuccessPage } from "@/pages/payment-success";
 import { PaymentFailurePage } from "@/pages/payment-failure";
 import { PrivacyPage, TermsPage, ShippingPage, ReturnsPage } from "@/pages/legal";
+import { ContactPage, FaqPage } from "@/pages/support";
 import { AdminLoginPage } from "@/pages/admin/login";
 import { AdminLayout } from "@/pages/admin/layout";
 import { AdminDashboardPage } from "@/pages/admin/dashboard";
@@ -83,10 +84,16 @@ function AppRouter() {
         <Route path="/checkout" component={CheckoutPage} />
         <Route path="/paiement/succes" component={PaymentSuccessPage} />
         <Route path="/paiement/echec" component={PaymentFailurePage} />
+        <Route path="/contact" component={ContactPage} />
+        <Route path="/faq" component={FaqPage} />
         <Route path="/confidentialite" component={PrivacyPage} />
         <Route path="/conditions" component={TermsPage} />
         <Route path="/expedition" component={ShippingPage} />
         <Route path="/retours" component={ReturnsPage} />
+        <Route path="/legal/confidentialite" component={PrivacyPage} />
+        <Route path="/legal/conditions" component={TermsPage} />
+        <Route path="/legal/expedition" component={ShippingPage} />
+        <Route path="/legal/retours" component={ReturnsPage} />
         <Route path="/" component={HomePage} />
         <Route component={NotFound} />
       </Switch>

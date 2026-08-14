@@ -121,6 +121,14 @@ export function Footer() {
             </ul>
           </div>
           <div>
+            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">Aide</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><Link href="/faq" className="hover:text-primary">Foire aux questions</Link></li>
+              <li><Link href="/contact" className="hover:text-primary">Nous joindre</Link></li>
+              <li><Link href="/legal/retours" className="hover:text-primary">Signaler un défaut</Link></li>
+            </ul>
+          </div>
+          <div>
             <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">Légal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link href="/legal/confidentialite" className="hover:text-primary">Politique de confidentialité</Link></li>
@@ -134,7 +142,8 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>Coton biologique éthique</li>
               <li>Impression à la demande</li>
-              <li>Livraison Canada 5-10 jours</li>
+              <li>Livraison Canada 7-14 jours</li>
+              <li>Défaut remplacé sous 30 jours</li>
             </ul>
           </div>
         </div>

@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { trackAddToCart, trackViewContent } from "@/lib/analytics";
 import { useCart } from "@/lib/cart";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import type { Product } from "@shared/schema";
 import productsData from "@/data/products.json";
@@ -14,6 +15,17 @@ import productsData from "@/data/products.json";
 export function ProductPage() {
   const { slug } = useParams();
   const { addToCart } = useCart();
+
+  // Pixel Meta — ViewContent a l'affichage de la fiche produit
+  useEffect(() => {
+    if (product?.id) {
+      trackViewContent({
+        id: String(product.id),
+        name: product.name,
+        price: product.basePrice,
+      });
+    }
+  }, [product?.id]);
   const { toast } = useToast();
   const [selectedSize, setSelectedSize] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>("");
@@ -84,6 +96,12 @@ export function ProductPage() {
       price: product.basePrice,
       productName: product.name,
       productImage: product.imageUrl,
+    });
+    trackAddToCart({
+      id: String(product.id),
+      name: product.name,
+      price: product.basePrice,
+      quantity,
     });
     toast({ title: "Ajouté au panier", description: `${product.name} - ${selectedSize}, ${selectedColor}` });
   };
