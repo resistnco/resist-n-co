@@ -34,7 +34,7 @@ export function CheckoutPage() {
     name: "", email: "", phone: "", address: "", city: "", province: "Québec", postalCode: "",
   });
 
-  const shipping = subtotal >= 75 ? 0 : 9.99;
+  const shipping = subtotal >= 75 ? 0 : 17.99;
   const provinceCode = PROVINCE_CODES[form.province] || "QC";
   const taxRate = provinceCode === "QC" ? 0.14975 : 0.05;
   const taxes = subtotal * taxRate;

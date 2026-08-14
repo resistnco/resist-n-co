@@ -607,7 +607,7 @@ export function registerRoutes(app: Express) {
         customerEmail: req.body.email || process.env.GMAIL_USER || 'resistnco@gmail.com',
         paymentMethod: 'interac',
         subtotal: 29.99,
-        shipping: 9.99,
+        shipping: 17.99,
         taxes: 4.49,
         total: 44.47,
         shippingAddress: '123 Test St',
@@ -663,7 +663,7 @@ export function registerRoutes(app: Express) {
         siteName: settings.site_name || 'Resist N Co',
         siteEmail: settings.site_email || '',
         currency: settings.currency || 'CAD',
-        shippingFlatRate: parseFloat(settings.shipping_flat_rate || '9.99'),
+        shippingFlatRate: parseFloat(settings.shipping_flat_rate || '17.99'),
         shippingFreeThreshold: parseFloat(settings.shipping_free_threshold || '75'),
       });
     } catch (err: any) {

@@ -62,7 +62,7 @@ export async function calculateShipping(subtotal: number): Promise<ShippingResul
   const thresholdStr = await getSetting('shipping_free_threshold');
   const flatRateStr = await getSetting('shipping_flat_rate');
   const threshold = parseFloat(thresholdStr) || 75;
-  const flatRate = parseFloat(flatRateStr) || 9.99;
+  const flatRate = parseFloat(flatRateStr) || 17.99;
 
   if (subtotal >= threshold) {
     return { cost: 0, isFree: true };
@@ -84,7 +84,7 @@ export async function getSetting(key: string): Promise<string> {
     'site_name': 'Resist N Co',
     'site_email': process.env.EMAIL_FROM || '',
     'currency': 'CAD',
-    'shipping_flat_rate': '9.99',
+    'shipping_flat_rate': '17.99',
     'shipping_free_threshold': '75',
   };
   return envFallbacks[key] || '';
