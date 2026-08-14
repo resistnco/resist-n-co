@@ -83,6 +83,12 @@ const dict: Dict = {
   "product.supplier": { fr: "Fourni par", en: "Fulfilled by" },
   "product.back": { fr: "Boutique", en: "Shop" },
   "product.from": { fr: "À partir de", en: "From" },
+  "product.quantity": { fr: "Quantité", en: "Quantity" },
+  "product.customize": { fr: "Personnaliser ce produit", en: "Customize this product" },
+  "product.badge": { fr: "Résist N Co · Engagement garanti", en: "Résist N Co · Commitment guaranteed" },
+  "product.dtg": { fr: "Impression haute définition DTG", en: "High-definition DTG printing" },
+  "product.delivery": { fr: "Livraison 5-10 jours ouvrables", en: "Delivery 5-10 business days" },
+  "product.returns": { fr: "Retours acceptés sous 14 jours", en: "Returns accepted within 14 days" },
 
   // Cart
   "cart.title": { fr: "Mon panier", en: "My Cart" },

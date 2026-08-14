@@ -18,17 +18,6 @@ export function ProductPage() {
   const { t, lang } = useI18n();
   const { slug } = useParams();
   const { addToCart } = useCart();
-
-  // Pixel Meta — ViewContent a l'affichage de la fiche produit
-  useEffect(() => {
-    if (product?.id) {
-      trackViewContent({
-        id: String(product.id),
-        name: product.name,
-        price: product.basePrice,
-      });
-    }
-  }, [product?.id]);
   const { toast } = useToast();
   const [selectedSize, setSelectedSize] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>("");
@@ -47,6 +36,17 @@ export function ProductPage() {
       }
     },
   });
+
+  // Pixel Meta — ViewContent a l'affichage de la fiche produit
+  useEffect(() => {
+    if (product?.id) {
+      trackViewContent({
+        id: String(product.id),
+        name: product.name,
+        price: product.basePrice,
+      });
+    }
+  }, [product?.id]);
 
   if (isLoading) {
     return (
@@ -129,7 +129,7 @@ export function ProductPage() {
             />
           </Card>
           <Badge className="absolute top-4 left-4" variant="secondary">
-            Résist N Co · Engagement garanti
+            {t("product.badge")}
           </Badge>
         </div>
 
@@ -189,7 +189,7 @@ export function ProductPage() {
 
           {/* Quantity */}
           <div className="mb-6">
-            <label className="text-sm font-medium mb-2 block">Quantité</label>
+            <label className="text-sm font-medium mb-2 block">{t("product.quantity")}</label>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -218,7 +218,7 @@ export function ProductPage() {
             </Button>
             <Link href={`/designer?product=${product.slug}`}>
               <Button size="lg" variant="outline" className="w-full" data-testid="button-customize">
-                Personnaliser ce produit
+                {t("product.customize")}
                 <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 19l7-7 3 3-7 7-3-3z" />
                   <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
@@ -233,15 +233,15 @@ export function ProductPage() {
           <div className="mt-6 pt-6 border-t border-border space-y-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
-              Impression haute définition DTG
+              {t("product.dtg")}
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l9 6 9-6M3 7l9-4 9 4"/></svg>
-              Livraison 5-10 jours ouvrables
+              {t("product.delivery")}
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Retours acceptés sous 14 jours
+              {t("product.returns")}
             </div>
           </div>
         </div>
