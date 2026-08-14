@@ -1,6 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { useCart } from "@/lib/cart";
 import { useTheme } from "@/lib/theme";
+import { useI18n } from "@/lib/i18n";
 import { Logo, SunIcon, MoonIcon, CartIcon } from "./icons";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -8,12 +9,13 @@ import { useState } from "react";
 export function Navbar() {
   const { totalItems } = useCart();
   const { theme, toggleTheme } = useTheme();
+  const { lang, toggleLang, t } = useI18n();
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Collection" },
-    { href: "/designer", label: "Créer mon design" },
+    { href: "/", label: t("nav.collection") },
+    { href: "/designer", label: t("nav.designer") },
   ];
 
   return (
@@ -42,18 +44,30 @@ export function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+            {/* Language toggle */}
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-sm font-semibold text-foreground hover:bg-accent transition-colors"
+              aria-label={lang === "fr" ? "Switch to English" : "Passer au français"}
+              data-testid="button-language-toggle"
+            >
+              <span className={lang === "fr" ? "text-primary" : "text-muted-foreground"}>FR</span>
+              <span className="text-muted-foreground/40">|</span>
+              <span className={lang === "en" ? "text-primary" : "text-muted-foreground"}>EN</span>
+            </button>
+
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              aria-label="Changer le thème"
+              aria-label={t("nav.theme")}
               data-testid="button-theme-toggle"
             >
               {theme === "dark" ? <SunIcon /> : <MoonIcon />}
             </Button>
 
             <Link href="/panier">
-              <Button variant="ghost" size="icon" aria-label="Panier" data-testid="button-cart">
+              <Button variant="ghost" size="icon" aria-label={t("nav.cart")} data-testid="button-cart">
                 <CartIcon count={totalItems} />
               </Button>
             </Link>
@@ -64,7 +78,7 @@ export function Navbar() {
               size="icon"
               className="md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Menu"
+              aria-label={t("nav.menu")}
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 {mobileOpen ? (
@@ -100,6 +114,7 @@ export function Navbar() {
 }
 
 export function Footer() {
+  const { t } = useI18n();
   return (
     <footer className="border-t border-border mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
@@ -109,46 +124,46 @@ export function Footer() {
               <Logo className="w-8 h-8" />
             </div>
             <p className="text-sm text-muted-foreground">
-              Vêtements et accessoires aux logos engagés. Résistez, organisez-vous, habillez vos convictions.
+              {t("footer.tagline")}
             </p>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">Collection</h4>
+            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">{t("footer.collection")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:text-primary">Tous les produits</Link></li>
-              <li><Link href="/designer" className="hover:text-primary">Créer un design</Link></li>
-              <li><Link href="/panier" className="hover:text-primary">Mon panier</Link></li>
+              <li><Link href="/" className="hover:text-primary">{t("footer.allProducts")}</Link></li>
+              <li><Link href="/designer" className="hover:text-primary">{t("footer.createDesign")}</Link></li>
+              <li><Link href="/panier" className="hover:text-primary">{t("footer.myCart")}</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">Aide</h4>
+            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">{t("footer.help")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/faq" className="hover:text-primary">Foire aux questions</Link></li>
-              <li><Link href="/contact" className="hover:text-primary">Nous joindre</Link></li>
-              <li><Link href="/legal/retours" className="hover:text-primary">Signaler un défaut</Link></li>
+              <li><Link href="/faq" className="hover:text-primary">{t("footer.faq")}</Link></li>
+              <li><Link href="/contact" className="hover:text-primary">{t("footer.contact")}</Link></li>
+              <li><Link href="/legal/retours" className="hover:text-primary">{t("footer.reportDefect")}</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">Légal</h4>
+            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">{t("footer.legal")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/legal/confidentialite" className="hover:text-primary">Politique de confidentialité</Link></li>
-              <li><Link href="/legal/conditions" className="hover:text-primary">Conditions d'utilisation</Link></li>
-              <li><Link href="/legal/expedition" className="hover:text-primary">Expédition & livraison</Link></li>
-              <li><Link href="/legal/retours" className="hover:text-primary">Retours & remboursements</Link></li>
+              <li><Link href="/legal/confidentialite" className="hover:text-primary">{t("footer.privacy")}</Link></li>
+              <li><Link href="/legal/conditions" className="hover:text-primary">{t("footer.terms")}</Link></li>
+              <li><Link href="/legal/expedition" className="hover:text-primary">{t("footer.shipping")}</Link></li>
+              <li><Link href="/legal/retours" className="hover:text-primary">{t("footer.returns")}</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">Nos valeurs</h4>
+            <h4 className="font-semibold text-sm mb-3 uppercase tracking-wide">{t("footer.values")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Coton biologique éthique</li>
-              <li>Impression à la demande</li>
-              <li>Livraison Canada 7-14 jours</li>
-              <li>Défaut remplacé sous 30 jours</li>
+              <li>{t("footer.organicCotton")}</li>
+              <li>{t("footer.printOnDemand")}</li>
+              <li>{t("footer.deliveryCanada")}</li>
+              <li>{t("footer.defectReplaced")}</li>
             </ul>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Resist N Co. Pas de planète B.
+          © {new Date().getFullYear()} Resist N Co. {t("footer.copyright")}
         </div>
       </div>
     </footer>

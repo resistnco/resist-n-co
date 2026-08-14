@@ -5,6 +5,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/lib/theme";
+import { LanguageProvider } from "@/lib/i18n";
 import { CartProvider } from "@/lib/cart";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Navbar, Footer } from "@/components/layout";
@@ -106,6 +107,7 @@ function App() {
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
+          <LanguageProvider>
           <CartProvider>
             <TooltipProvider>
               <Toaster />
@@ -114,6 +116,7 @@ function App() {
               </Router>
             </TooltipProvider>
           </CartProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </QueryClientProvider>
     </ErrorBoundary>

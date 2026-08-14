@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, FileText, Truck, RotateCcw, ArrowLeft } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 /* -------------------------------------------------------------------------- */
 /* Shared layout helpers                                                       */
@@ -15,6 +16,7 @@ type LegalPageProps = {
 };
 
 function LegalLayout({ icon, title, intro, lastUpdated, children }: LegalPageProps) {
+  const { t } = useI18n();
   return (
     <div className="bg-background">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16">
@@ -24,7 +26,7 @@ function LegalLayout({ icon, title, intro, lastUpdated, children }: LegalPagePro
           className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-red-600 transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Retour à la boutique
+          {t("notfound.home")}
         </Link>
 
         {/* Header */}
@@ -40,7 +42,7 @@ function LegalLayout({ icon, title, intro, lastUpdated, children }: LegalPagePro
           </p>
           {lastUpdated && (
             <p className="text-xs uppercase tracking-widest text-muted-foreground mt-4">
-              Dernière mise à jour : {lastUpdated}
+              {t("legal.lastUpdated")}: {lastUpdated}
             </p>
           )}
         </header>
@@ -51,11 +53,11 @@ function LegalLayout({ icon, title, intro, lastUpdated, children }: LegalPagePro
         {/* Footer CTA */}
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground mb-4">
-            Des questions sur cette politique ?
+            {t("legal.questions")}
           </p>
           <a href="mailto:support@resistnco.ca">
             <Button variant="outline" className="uppercase tracking-wide font-semibold">
-              Nous contacter
+              {t("payFail.contact")}
             </Button>
           </a>
         </div>
@@ -88,10 +90,11 @@ function Section({
 /* -------------------------------------------------------------------------- */
 
 export function PrivacyPage() {
+  const { t } = useI18n();
   return (
     <LegalLayout
       icon={<ShieldCheck className="w-6 h-6" />}
-      title="Politique de confidentialité"
+      title={t("legal.privacyTitle")}
       intro="Resist N Co s'engage à protéger vos renseignements personnels. Cette politique décrit quelles données nous collectons, comment nous les utilisons et les droits dont vous disposez en vertu de la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE)."
       lastUpdated="12 août 2026"
     >
@@ -214,10 +217,11 @@ export function PrivacyPage() {
 /* -------------------------------------------------------------------------- */
 
 export function TermsPage() {
+  const { t } = useI18n();
   return (
     <LegalLayout
       icon={<FileText className="w-6 h-6" />}
-      title="Conditions d'utilisation"
+      title={t("legal.termsTitle")}
       intro="Ces conditions régissent votre utilisation du site Resist N Co et de la boutique en ligne. En passant une commande ou en naviguant sur le site, vous acceptez les présentes conditions."
       lastUpdated="12 août 2026"
     >
@@ -277,7 +281,7 @@ export function TermsPage() {
           Nos articles étant produits en impression à la demande, un délai de production de 2
           à 7 jours ouvrables s'applique avant l'expédition. Le délai d'expédition est ensuite
           de 3 à 10 jours ouvrables. La livraison est gratuite pour toute commande de 75 $ et
-          plus ; un tarif forfaitaire de 9,99 $ s'applique en deçà de ce seuil. Consultez notre
+          plus ; un tarif forfaitaire de 17,99 $ s'applique en deçà de ce seuil. Consultez notre
           politique d'expédition complète pour les détails.
         </p>
       </Section>
@@ -342,10 +346,11 @@ export function TermsPage() {
 /* -------------------------------------------------------------------------- */
 
 export function ShippingPage() {
+  const { t } = useI18n();
   return (
     <LegalLayout
       icon={<Truck className="w-6 h-6" />}
-      title="Politique d'expédition"
+      title={t("legal.shippingTitle")}
       intro="Nos articles sont fabriqués à la demande puis expédiés partout au Canada et à l'international. Voici à quoi vous attendre en matière de production, d'expédition et de frais."
       lastUpdated="12 août 2026"
     >
@@ -380,7 +385,7 @@ export function ShippingPage() {
           </div>
           <div className="flex items-center justify-between border-t border-border pt-2">
             <span className="text-foreground font-medium">Commande de moins de 75 $</span>
-            <span className="text-foreground font-semibold">9,99 $ (tarif forfaitaire)</span>
+            <span className="text-foreground font-semibold">17,99 $ (tarif forfaitaire)</span>
           </div>
         </div>
         <p>
@@ -432,10 +437,11 @@ export function ShippingPage() {
 /* -------------------------------------------------------------------------- */
 
 export function ReturnsPage() {
+  const { t } = useI18n();
   return (
     <LegalLayout
       icon={<RotateCcw className="w-6 h-6" />}
-      title="Politique de retour"
+      title={t("legal.returnsTitle")}
       intro="Nos articles sont fabriqués à la commande en impression à la demande. Cette politique explique les cas de retour, le signalement des défauts et le processus de remboursement."
       lastUpdated="12 août 2026"
     >

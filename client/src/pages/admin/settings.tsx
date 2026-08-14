@@ -43,7 +43,7 @@ const FIELDS: {
     key: "shipping_flat_rate",
     label: "Frais de livraison forfaitaires (CAD)",
     type: "number",
-    placeholder: "9.99",
+    placeholder: "17.99",
   },
   {
     key: "shipping_free_threshold",

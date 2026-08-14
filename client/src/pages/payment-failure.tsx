@@ -2,8 +2,10 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { XCircle, RotateCcw, Mail, Phone } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export function PaymentFailurePage() {
+  const { t } = useI18n();
   const [location] = useLocation();
   const params = new URLSearchParams(location.split("?")[1] || "");
   const orderNumber = params.get("order") || "";
@@ -17,10 +19,10 @@ export function PaymentFailurePage() {
             <XCircle className="w-9 h-9 text-red-600" />
           </div>
           <h1 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight mb-3">
-            Paiement échoué
+            {t("payFail.title")}
           </h1>
           <p className="text-muted-foreground">
-            Le paiement n'a pas pu être traité. Aucun montant n'a été débité de votre compte.
+            {t("payFail.desc")}
           </p>
         </div>
 
@@ -77,7 +79,7 @@ export function PaymentFailurePage() {
             <Link href={`/checkout?order=${encodeURIComponent(orderNumber)}`} className="flex-1">
               <Button size="lg" className="w-full uppercase tracking-wide font-semibold">
                 <RotateCcw className="w-4 h-4 mr-2" />
-                Réessayer le paiement
+                {t("payFail.retry")}
               </Button>
             </Link>
           )}
@@ -95,7 +97,7 @@ export function PaymentFailurePage() {
         {/* Contact info */}
         <div className="mt-8 border border-border rounded-lg px-6 py-5">
           <h2 className="font-semibold text-sm uppercase tracking-wide mb-3">
-            Besoin d'aide ?
+            {t("payFail.contact")}
           </h2>
           <p className="text-sm text-muted-foreground mb-4">
             Notre équipe est disponible pour vous aider à finaliser votre commande. Contactez-nous :

@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { trackInitiateCheckout } from "@/lib/analytics";
+import { useI18n } from "@/lib/i18n";
 
 const PROVINCES = [
   "Québec", "Ontario", "Colombie-Britannique", "Alberta", "Manitoba", "Saskatchewan",
@@ -24,6 +25,7 @@ const PROVINCE_CODES: Record<string, string> = {
 };
 
 export function CheckoutPage() {
+  const { t, lang } = useI18n();
   const { items, subtotal, visitorId } = useCart();
   const { toast } = useToast();
   const [paymentMethod, setPaymentMethod] = useState<"stripe" | "interac">("stripe");
@@ -42,11 +44,11 @@ export function CheckoutPage() {
 
   const handleCheckout = async () => {
     if (!form.name || !form.email || !form.address || !form.city || !form.postalCode) {
-      toast({ title: "Veuillez remplir tous les champs requis", variant: "destructive" });
+      toast({ title: t("checkout.canadaOnly"), variant: "destructive" });
       return;
     }
     if (items.length === 0) {
-      toast({ title: "Votre panier est vide", variant: "destructive" });
+      toast({ title: t("cart.empty"), variant: "destructive" });
       return;
     }
 
@@ -114,8 +116,8 @@ export function CheckoutPage() {
             <path d="M12 8v4M12 16h.01M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z" />
           </svg>
         </div>
-        <h1 className="font-display text-2xl font-bold mb-2">Commande créée — Paiement Interac en attente</h1>
-        <p className="text-sm text-muted-foreground mb-2">Votre numéro de commande</p>
+        <h1 className="font-display text-2xl font-bold mb-2">{t("checkout.title")}</h1>
+        <p className="text-sm text-muted-foreground mb-2">{t("paySuccess.orderNumber")}</p>
         <Badge variant="secondary" className="text-lg mb-6">{interacResult.orderNumber}</Badge>
         <div className="text-left p-4 bg-muted/50 rounded-lg max-w-md mx-auto">
           <p className="font-semibold mb-2">Instructions virement Interac:</p>
@@ -130,7 +132,7 @@ export function CheckoutPage() {
         </div>
         <p className="text-xs text-muted-foreground mt-4">Un courriel avec ces instructions vous a été envoyé.</p>
         <div className="flex justify-center gap-3 mt-6">
-          <Link href="/"><Button>Retour à la boutique</Button></Link>
+          <Link href="/"><Button>{t("product.back")}</Button></Link>
         </div>
       </div>
     );
@@ -139,69 +141,69 @@ export function CheckoutPage() {
   if (items.length === 0) {
     return (
       <div className="mx-auto max-w-2xl px-4 sm:px-6 py-20 text-center">
-        <h1 className="text-xl font-semibold mb-2">Votre panier est vide</h1>
-        <Link href="/"><Button>Parcourir la boutique</Button></Link>
+        <h1 className="text-xl font-semibold mb-2">{t("cart.empty")}</h1>
+        <Link href="/"><Button>{t("cart.browse")}</Button></Link>
       </div>
     );
   }
 
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8">
-      <h1 className="font-display text-xl md:text-2xl font-bold mb-6">Commande</h1>
+      <h1 className="font-display text-xl md:text-2xl font-bold mb-6">{t("checkout.title")}</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-6">
           <Card className="p-5" data-testid="card-shipping-info">
-            <h2 className="font-semibold text-sm mb-4">Informations de livraison</h2>
+            <h2 className="font-semibold text-sm mb-4">{t("checkout.shipping")}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="sm:col-span-2">
-                <Label htmlFor="name">Nom complet *</Label>
+                <Label htmlFor="name">{t("checkout.firstName")} {t("checkout.lastName")} *</Label>
                 <Input id="name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} data-testid="input-name" />
               </div>
               <div>
-                <Label htmlFor="email">Courriel *</Label>
+                <Label htmlFor="email">{t("checkout.email")} *</Label>
                 <Input id="email" type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} data-testid="input-email" />
               </div>
               <div>
-                <Label htmlFor="phone">Téléphone</Label>
+                <Label htmlFor="phone">{t("checkout.contact")}</Label>
                 <Input id="phone" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} data-testid="input-phone" />
               </div>
               <div className="sm:col-span-2">
-                <Label htmlFor="address">Adresse *</Label>
+                <Label htmlFor="address">{t("checkout.address")} *</Label>
                 <Input id="address" value={form.address} onChange={e => setForm({ ...form, address: e.target.value })} data-testid="input-address" />
               </div>
               <div>
-                <Label htmlFor="city">Ville *</Label>
+                <Label htmlFor="city">{t("checkout.city")} *</Label>
                 <Input id="city" value={form.city} onChange={e => setForm({ ...form, city: e.target.value })} data-testid="input-city" />
               </div>
               <div>
-                <Label htmlFor="province">Province *</Label>
+                <Label htmlFor="province">{t("checkout.province")} *</Label>
                 <select id="province" className="w-full h-9 rounded-md border border-input bg-transparent px-3 text-sm" value={form.province} onChange={e => setForm({ ...form, province: e.target.value })} data-testid="select-province">
                   {PROVINCES.map(p => <option key={p} value={p}>{p}</option>)}
                 </select>
               </div>
               <div>
-                <Label htmlFor="postalCode">Code postal *</Label>
+                <Label htmlFor="postalCode">{t("checkout.postalCode")} *</Label>
                 <Input id="postalCode" value={form.postalCode} onChange={e => setForm({ ...form, postalCode: e.target.value })} data-testid="input-postal-code" />
               </div>
             </div>
           </Card>
 
           <Card className="p-5" data-testid="card-payment-method">
-            <h2 className="font-semibold text-sm mb-4">Méthode de paiement</h2>
+            <h2 className="font-semibold text-sm mb-4">{t("checkout.payment")}</h2>
             <div className="space-y-2">
               <label className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition ${paymentMethod === "stripe" ? "border-red-600 bg-red-600/5" : "border-border"}`}>
                 <input type="radio" name="payment" checked={paymentMethod === "stripe"} onChange={() => setPaymentMethod("stripe")} className="accent-red-600" data-testid="radio-stripe" />
                 <div>
-                  <span className="text-sm font-medium">Carte de crédit (Stripe)</span>
-                  <p className="text-xs text-muted-foreground">Visa, Mastercard, Amex — paiement sécurisé</p>
+                  <span className="text-sm font-medium">{t("checkout.payWithStripe")}</span>
+                  <p className="text-xs text-muted-foreground">Visa, Mastercard, Amex — {t("checkout.canadaOnly")}</p>
                 </div>
               </label>
               <label className={`flex items-center gap-3 p-3 rounded-lg border cursor-pointer transition ${paymentMethod === "interac" ? "border-red-600 bg-red-600/5" : "border-border"}`}>
                 <input type="radio" name="payment" checked={paymentMethod === "interac"} onChange={() => setPaymentMethod("interac")} className="accent-red-600" data-testid="radio-interac" />
                 <div>
-                  <span className="text-sm font-medium">Virement Interac</span>
-                  <p className="text-xs text-muted-foreground">Paiement par virement bancaire — confirmation manuelle</p>
+                  <span className="text-sm font-medium">{t("checkout.payWithInterac")}</span>
+                  <p className="text-xs text-muted-foreground">{t("checkout.canadaOnly")}</p>
                 </div>
               </label>
             </div>
@@ -210,7 +212,7 @@ export function CheckoutPage() {
 
         <div>
           <Card className="p-5 sticky top-4" data-testid="card-order-summary">
-            <h2 className="font-semibold text-sm mb-4">Résumé de la commande</h2>
+            <h2 className="font-semibold text-sm mb-4">{t("checkout.summary")}</h2>
             <div className="space-y-2 text-sm">
               {items.map((item, i) => (
                 <div key={i} className="flex justify-between">
@@ -220,19 +222,19 @@ export function CheckoutPage() {
               ))}
               <div className="border-t pt-2 mt-2 space-y-1">
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Sous-total</span>
+                  <span className="text-muted-foreground">{t("cart.subtotal")}</span>
                   <span>{subtotal.toFixed(2)} $</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Livraison</span>
-                  <span>{shipping === 0 ? "Gratuite" : `${shipping.toFixed(2)} $`}</span>
+                  <span className="text-muted-foreground">{t("cart.shipping")}</span>
+                  <span>{shipping === 0 ? t("cart.free") : `${shipping.toFixed(2)} $`}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">Taxes (TPS{provinceCode === "QC" ? " + TVQ" : ""})</span>
+                  <span className="text-muted-foreground">{provinceCode === "QC" ? `${t("cart.tps")} + ${t("cart.tvq")}` : t("cart.tps")}</span>
                   <span>{taxes.toFixed(2)} $</span>
                 </div>
                 <div className="flex justify-between font-bold text-base pt-1">
-                  <span>Total</span>
+                  <span>{t("cart.total")}</span>
                   <span>{total.toFixed(2)} $ CAD</span>
                 </div>
               </div>
@@ -243,10 +245,10 @@ export function CheckoutPage() {
               onClick={handleCheckout}
               data-testid="button-checkout"
             >
-              {processing ? "Traitement..." : paymentMethod === "stripe" ? "Payer par carte" : "Commander (Interac)"}
+              {processing ? t("checkout.processing") : paymentMethod === "stripe" ? t("checkout.payWithStripe") : t("checkout.payWithInterac")}
             </Button>
             <p className="text-xs text-center text-muted-foreground mt-2">
-              Paiement sécurisé · Livraison gratuite dès 75 $
+              {t("checkout.canadaOnly")} · {t("cart.freeThreshold")}
             </p>
           </Card>
         </div>

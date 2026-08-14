@@ -11,8 +11,11 @@ import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import type { Product } from "@shared/schema";
 import productsData from "@/data/products.json";
+import { useI18n } from "@/lib/i18n";
+import { localizeProduct } from "@/lib/productTranslations";
 
 export function ProductPage() {
+  const { t, lang } = useI18n();
   const { slug } = useParams();
   const { addToCart } = useCart();
 
@@ -64,9 +67,9 @@ export function ProductPage() {
   if (!product) {
     return (
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-20 text-center">
-        <h1 className="text-xl font-semibold mb-2">Produit introuvable</h1>
+        <h1 className="text-xl font-semibold mb-2">{t("paySuccess.notFound")}</h1>
         <Link href="/">
-          <Button variant="outline">Retour à la boutique</Button>
+          <Button variant="outline">{t("product.back")}</Button>
         </Link>
       </div>
     );
@@ -79,11 +82,11 @@ export function ProductPage() {
 
   const handleAddToCart = async () => {
     if (!selectedSize) {
-      toast({ title: "Veuillez choisir une taille", variant: "destructive" });
+      toast({ title: t("product.chooseSize"), variant: "destructive" });
       return;
     }
     if (!selectedColor) {
-      toast({ title: "Veuillez choisir une couleur", variant: "destructive" });
+      toast({ title: t("product.chooseColor"), variant: "destructive" });
       return;
     }
     await addToCart({
@@ -103,16 +106,16 @@ export function ProductPage() {
       price: product.basePrice,
       quantity,
     });
-    toast({ title: "Ajouté au panier", description: `${product.name} - ${selectedSize}, ${selectedColor}` });
+    toast({ title: t("product.addedToCart"), description: `${product.name} - ${selectedSize}, ${selectedColor}` });
   };
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-        <Link href="/" className="hover:text-primary">Boutique</Link>
+        <Link href="/" className="hover:text-primary">{t("product.back")}</Link>
         <span>/</span>
-        <span className="text-foreground">{product.name}</span>
+        <span className="text-foreground">{localizeProduct(product, lang).name}</span>
       </nav>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -121,7 +124,7 @@ export function ProductPage() {
           <Card className="overflow-hidden">
             <img
               src={typeof product.imageUrl === 'string' && product.imageUrl.startsWith('/') ? '.' + product.imageUrl : product.imageUrl}
-              alt={product.name}
+              alt={localizeProduct(product, lang).name}
               className="w-full aspect-square object-cover"
             />
           </Card>
@@ -132,15 +135,15 @@ export function ProductPage() {
 
         {/* Details */}
         <div className="flex flex-col">
-          <h1 className="font-display text-2xl font-bold mb-2">{product.name}</h1>
+          <h1 className="font-display text-2xl font-bold mb-2">{localizeProduct(product, lang).name}</h1>
           <p className="text-2xl font-semibold text-primary mb-4">{product.basePrice.toFixed(2)} $ CAD</p>
-          <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
+          <p className="text-sm text-muted-foreground mb-4">{localizeProduct(product, lang).description}</p>
 
           {/* Supplier info - hidden from public */}
 
           {/* Color selection */}
           <div className="mb-6">
-            <label className="text-sm font-medium mb-2 block">Couleur</label>
+            <label className="text-sm font-medium mb-2 block">{t("product.color")}</label>
             <div className="flex flex-wrap gap-2">
               {colors.map((c) => (
                 <button
@@ -165,7 +168,7 @@ export function ProductPage() {
 
           {/* Size selection */}
           <div className="mb-6">
-            <label className="text-sm font-medium mb-2 block">Taille</label>
+            <label className="text-sm font-medium mb-2 block">{t("product.size")}</label>
             <div className="flex flex-wrap gap-2">
               {sizes.map((s) => (
                 <button
@@ -211,7 +214,7 @@ export function ProductPage() {
               onClick={handleAddToCart}
               data-testid="button-add-cart"
             >
-              Ajouter au panier · {(product.basePrice * quantity).toFixed(2)} $
+              {t("product.addToCart")} · {(product.basePrice * quantity).toFixed(2)} $
             </Button>
             <Link href={`/designer?product=${product.slug}`}>
               <Button size="lg" variant="outline" className="w-full" data-testid="button-customize">

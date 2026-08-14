@@ -12,6 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useCart } from "@/lib/cart";
 import { useToast } from "@/hooks/use-toast";
 import type { Product } from "@shared/schema";
+import { useI18n } from "@/lib/i18n";
 
 // Load Fabric.js from CDN
 declare global {
@@ -36,6 +37,7 @@ function loadFabric(): Promise<void> {
 }
 
 export function DesignerPage() {
+  const { t } = useI18n();
   const [location] = useLocation();
   const params = new URLSearchParams(location.split("?")[1] || "");
   const productSlug = params.get("product") || "tshirt-classique";
@@ -260,11 +262,11 @@ export function DesignerPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="font-display text-xl md:text-2xl font-bold">Studio de création</h1>
-          <p className="text-sm text-muted-foreground">{product?.name} — Designez votre vêtement</p>
+          <h1 className="font-display text-xl md:text-2xl font-bold">{t("designer.title")}</h1>
+          <p className="text-sm text-muted-foreground">{t("designer.subtitle")}</p>
         </div>
         <Link href="/">
-          <Button variant="ghost" size="sm">Retour</Button>
+          <Button variant="ghost" size="sm">{t("common.back")}</Button>
         </Link>
       </div>
 

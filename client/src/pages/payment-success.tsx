@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { CheckCircle2, Package, ShoppingBag } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 type OrderItem = {
   id: number;
@@ -45,6 +46,7 @@ const STATUS_LABELS: Record<string, string> = {
 };
 
 export function PaymentSuccessPage() {
+  const { t } = useI18n();
   const [location] = useLocation();
   const params = new URLSearchParams(location.split("?")[1] || "");
   const orderNumber = params.get("order") || "";
@@ -79,10 +81,10 @@ export function PaymentSuccessPage() {
             <CheckCircle2 className="w-9 h-9 text-red-600" />
           </div>
           <h1 className="font-display text-3xl md:text-4xl font-bold uppercase tracking-tight mb-3">
-            Paiement confirmé
+            {t("paySuccess.title")}
           </h1>
           <p className="text-muted-foreground">
-            Merci pour votre commande ! Un courriel de confirmation a été envoyé.
+            {t("paySuccess.thankYou")} {t("paySuccess.emailSent")}
           </p>
         </div>
 
@@ -92,7 +94,7 @@ export function PaymentSuccessPage() {
             <div className="bg-red-600/5 border-b border-border px-6 py-4 flex items-center justify-between">
               <div>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                  Numéro de commande
+                  {t("paySuccess.orderNumber")}
                 </p>
                 <p className="font-display font-bold text-lg text-red-600 break-all">
                   {orderNumber || "—"}
@@ -105,19 +107,15 @@ export function PaymentSuccessPage() {
             <div className="px-6 py-6">
               {isLoading ? (
                 <div className="space-y-3">
+                  <p className="text-sm text-muted-foreground">{t("paySuccess.loading")}</p>
                   <Skeleton className="h-5 w-2/3" />
                   <Skeleton className="h-5 w-1/2" />
                   <Skeleton className="h-5 w-3/4" />
                 </div>
               ) : isError || !order ? (
                 <div className="text-sm text-muted-foreground">
-                  <p className="mb-2">
-                    Impossible de récupérer les détails de la commande. Votre paiement a
-                    néanmoins été reçu.
-                  </p>
-                  <p>
-                    Conservez votre numéro de commande pour toute référence future.
-                  </p>
+                  <p className="mb-2 font-semibold">{t("paySuccess.notFound")}</p>
+                  <p>{t("paySuccess.notFoundDesc")}</p>
                 </div>
               ) : (
                 <div className="space-y-5">
@@ -175,7 +173,7 @@ export function PaymentSuccessPage() {
                       </div>
                     )}
                     <div className="flex justify-between font-semibold text-base pt-2 border-t border-border">
-                      <span>Total</span>
+                      <span>{t("paySuccess.total")}</span>
                       <span className="text-red-600">{order.total.toFixed(2)} $</span>
                     </div>
                   </div>
@@ -202,12 +200,12 @@ export function PaymentSuccessPage() {
           <Link href="/" className="flex-1">
             <Button size="lg" className="w-full uppercase tracking-wide font-semibold">
               <ShoppingBag className="w-4 h-4 mr-2" />
-              Continuer mes achats
+              {t("paySuccess.continueShopping")}
             </Button>
           </Link>
           <Link href="/panier" className="flex-1">
             <Button size="lg" variant="outline" className="w-full uppercase tracking-wide font-semibold">
-              Voir mon panier
+              {t("paySuccess.viewOrder")}
             </Button>
           </Link>
         </div>
