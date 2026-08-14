@@ -1,21 +1,11 @@
 export function Logo({ className = "w-8 h-8" }: { className?: string }) {
   return (
-    <svg
+    <img
+      src={`${import.meta.env.BASE_URL}logo.png`}
+      alt="Resistance & Co."
       className={className}
-      viewBox="0 0 40 40"
-      fill="none"
-      aria-label="Resist N Co"
-    >
-      {/* Raised fist inside a circle */}
-      <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="2.5" />
-      {/* Fist shape */}
-      <path
-        d="M14 28 L14 20 Q14 16 17 16 L17 13 Q17 11 19 11 Q21 11 21 13 L21 16 L23 16 Q25 16 25 18 L25 13 Q25 11 27 11 Q29 11 29 13 L29 20 Q29 24 26 26 L26 28 Z"
-        fill="currentColor"
-      />
-      {/* Forearm */}
-      <rect x="16" y="28" width="11" height="5" rx="1" fill="currentColor" />
-    </svg>
+      style={{ objectFit: "contain", borderRadius: "12%" }}
+    />
   );
 }
 

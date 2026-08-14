@@ -21,9 +21,8 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-display font-bold text-lg uppercase tracking-wide">
-            <Logo className="w-8 h-8 text-primary" />
-            <span>Resist N Co</span>
+          <Link href="/" className="flex items-center gap-2 font-display font-bold uppercase tracking-wide">
+            <Logo className="w-10 h-10" />
           </Link>
 
           {/* Desktop nav */}
@@ -106,9 +105,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 font-display font-bold text-lg mb-3 uppercase tracking-wide">
-              <Logo className="w-6 h-6 text-primary" />
-              Resist N Co
+            <div className="flex items-center gap-2 font-display font-bold mb-3 uppercase tracking-wide">
+              <Logo className="w-8 h-8" />
             </div>
             <p className="text-sm text-muted-foreground">
               Vêtements et accessoires aux logos engagés. Résistez, organisez-vous, habillez vos convictions.

@@ -1,14 +1,17 @@
 import { prisma } from './prisma';
 import { getSetting } from './services';
-import nodemailer from 'nodemailer';
+import { google } from 'googleapis';
 
 // ============================================================
-// Email Service — supports Resend API or Gmail SMTP
+// Email Service — Gmail REST API (HTTPS, not blocked by Render)
+// Falls back to Resend API if configured
 // ============================================================
 
-const resendApiKey = process.env.EMAIL_API_KEY || '';
 const gmailUser = process.env.GMAIL_USER || '';
-const gmailAppPassword = process.env.GMAIL_APP_PASSWORD || '';
+const gmailClientId = process.env.GMAIL_CLIENT_ID || '';
+const gmailClientSecret = process.env.GMAIL_CLIENT_SECRET || '';
+const gmailRefreshToken = process.env.GMAIL_REFRESH_TOKEN || '';
+const resendApiKey = process.env.EMAIL_API_KEY || '';
 
 // Sanitize EMAIL_FROM — Render dashboard may have HTML-encoded the < > characters
 const rawEmailFrom = process.env.EMAIL_FROM || '';
@@ -19,13 +22,82 @@ const emailFrom = rawEmailFrom
   || `Resist N Co <${gmailUser || 'onboarding@resend.dev'}>`;
 
 export function isEmailConfigured(): boolean {
-  return !!resendApiKey || (!!gmailUser && !!gmailAppPassword);
+  return (!!gmailClientId && !!gmailClientSecret && !!gmailRefreshToken) || !!resendApiKey;
 }
 
 export function getEmailMethod(): string {
+  if (gmailClientId && gmailClientSecret && gmailRefreshToken) return 'gmail-api';
   if (resendApiKey) return 'resend';
-  if (gmailUser && gmailAppPassword) return 'gmail';
   return 'none';
+}
+
+// Gmail REST API OAuth2 client (cached)
+let oauth2Client: any = null;
+
+function getGmailClient() {
+  if (!oauth2Client && gmailClientId && gmailClientSecret && gmailRefreshToken) {
+    oauth2Client = new google.auth.OAuth2(
+      gmailClientId,
+      gmailClientSecret,
+      'https://developers.google.com/oauthplayground'
+    );
+    oauth2Client.setCredentials({
+      refresh_token: gmailRefreshToken,
+    });
+  }
+  return oauth2Client;
+}
+
+async function sendViaGmailApi(to: string, subject: string, html: string): Promise<boolean> {
+  const client = getGmailClient();
+  if (!client) return false;
+
+  // Refresh access token if needed
+  const { credentials } = await client.refreshAccessToken();
+  client.setCredentials(credentials);
+
+  const gmail = google.gmail({ version: 'v1', auth: client });
+
+  // Build raw email (RFC 2822 format, base64url encoded)
+  const fromEmail = emailFrom.match(/<(.+)>/)?.[1] || gmailUser;
+  const fromName = emailFrom.match(/^(.+?)\s*</)?.[1]?.trim() || 'Resist N Co';
+  const rawMessage = [
+    `From: ${fromName} <${fromEmail}>`,
+    `To: ${to}`,
+    `Subject: ${subject}`,
+    `Reply-To: resistnco@protonmail.com`,
+    `Content-Type: text/html; charset=utf-8`,
+    ``,
+    html,
+  ].join('\r\n');
+
+  const encodedMessage = Buffer.from(rawMessage)
+    .toString('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '');
+
+  await gmail.users.messages.send({
+    userId: 'me',
+    requestBody: { raw: encodedMessage },
+  });
+
+  console.log(`[Email] Sent via Gmail API to ${to}: ${subject}`);
+  return true;
+}
+
+async function sendViaResend(to: string, subject: string, html: string): Promise<boolean> {
+  const { Resend } = await import('resend');
+  const resend = new Resend(resendApiKey);
+  await resend.emails.send({
+    from: emailFrom,
+    to,
+    subject,
+    html,
+    reply_to: 'resistnco@protonmail.com',
+  });
+  console.log(`[Email] Sent via Resend to ${to}: ${subject}`);
+  return true;
 }
 
 async function sendEmail(to: string, subject: string, html: string): Promise<boolean> {
@@ -33,48 +105,26 @@ async function sendEmail(to: string, subject: string, html: string): Promise<boo
     console.log(`[Email] Not configured. Would send to ${to}: ${subject}`);
     return false;
   }
-  // Try Resend first if configured
+
+  // Try Gmail REST API first (uses HTTPS port 443, not blocked by Render)
+  if (gmailClientId && gmailClientSecret && gmailRefreshToken) {
+    try {
+      return await sendViaGmailApi(to, subject, html);
+    } catch (err: any) {
+      console.error(`[Email] Gmail API failed: ${err.message}`);
+    }
+  }
+
+  // Fall back to Resend (only works for owner email with onboarding@resend.dev)
   if (resendApiKey) {
     try {
-      const { Resend } = await import('resend');
-      const resend = new Resend(resendApiKey);
-      await resend.emails.send({
-        from: emailFrom,
-        to,
-        subject,
-        html,
-        reply_to: 'resistnco@protonmail.com',
-      });
-      console.log(`[Email] Sent via Resend to ${to}: ${subject}`);
-      return true;
+      return await sendViaResend(to, subject, html);
     } catch (err: any) {
-      console.error(`[Email] Resend failed, trying Gmail fallback: ${err.message}`);
+      console.error(`[Email] Resend failed: ${err.message}`);
     }
   }
 
-  // Gmail SMTP fallback
-  if (gmailUser && gmailAppPassword) {
-    try {
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: { user: gmailUser, pass: gmailAppPassword },
-      });
-      await transporter.sendMail({
-        from: emailFrom,
-        to,
-        subject,
-        html,
-        replyTo: 'resistnco@protonmail.com',
-      });
-      console.log(`[Email] Sent via Gmail to ${to}: ${subject}`);
-      return true;
-    } catch (err: any) {
-      console.error(`[Email] Gmail failed to send to ${to}: ${err.message}`);
-      return false;
-    }
-  }
-
-  console.error('[Email] No email method available');
+  console.error('[Email] All email methods failed');
   return false;
 }
 
